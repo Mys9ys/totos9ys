@@ -1,0 +1,338 @@
+@media screen {
+  #block1 .panel1 span {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    animation: bounce .5s ease infinite alternate;
+    font-family: 'Titan One', cursive;
+    font-size: 80px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #CCC, 0 2px 0 #CCC, 0 3px 0 #CCC, 0 4px 0 #CCC, 0 5px 0 #CCC, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  }
+  #block1 .panel1 span:nth-child(2) {
+    animation-delay: .1s;
+  }
+  #block1 .panel1 span:nth-child(3) {
+    animation-delay: .2s;
+  }
+  #block1 .panel1 span:nth-child(4) {
+    animation-delay: .3s;
+  }
+  #block1 .panel1 span:nth-child(5) {
+    animation-delay: .4s;
+  }
+  #block1 .panel1 span:nth-child(6) {
+    animation-delay: .5s;
+  }
+  #block1 .panel1 span:nth-child(7) {
+    animation-delay: .6s;
+  }
+  #block1 .panel1 span:nth-child(8) {
+    animation-delay: .7s;
+  }
+  @keyframes bounce {
+    100% {
+      top: -20px;
+      text-shadow: 0 1px 0 #CCC, 0 2px 0 #CCC, 0 3px 0 #CCC, 0 4px 0 #CCC, 0 5px 0 #CCC, 0 6px 0 #CCC, 0 7px 0 #CCC, 0 8px 0 #CCC, 0 9px 0 #CCC, 0 50px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  #block1 {
+    width: 100%;
+    height: 800px;
+    background-image: url('/public/image/bg2.jpg');
+    background-position: center;
+  }
+  #block1 .top-right a {
+    color: #080808;
+    font-size: 18px;
+    background-color: rgba(250, 250, 250, 0.8);
+    border-radius: 10px;
+  }
+  #block1 .top-right a:hover {
+    background-color: #080808;
+    color: rgba(250, 250, 250, 0.8);
+  }
+  #block1 .panel0 {
+    width: 1224px;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+    height: 100%;
+  }
+  #block1 .panel1 {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+  #block1 .panel2 {
+    position: absolute;
+    top: 220px;
+    padding: 20px;
+    font-family: Calibri;
+    right: 110px;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(250, 250, 250, 0.6);
+    font-size: 20px;
+    color: #080808;
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 769px) {
+  #block2 {
+    width: 100%;
+    height: 820px;
+    background: #444;
+  }
+  #block2 .panel0 {
+    width: 1224px;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+    height: 100%;
+  }
+  #block2 .panel1 {
+    font-family: 'Times New Roman', cursive;
+  }
+  #block2 .panel1 .words {
+    color: #444;
+    font-size: 0;
+    line-height: 1;
+    text-align: center;
+  }
+  #block2 .panel1 .words span {
+    font-size: 100px;
+    display: inline-block;
+    animation: move 2s ease-in-out infinite;
+  }
+  #block2 .panel1 .words span:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  #block2 .panel1 .words span:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  #block2 .panel1 .words span:nth-child(4) {
+    animation-delay: 0.9s;
+  }
+  #block2 .panel1 .words span:nth-child(5) {
+    animation-delay: 1.2s;
+  }
+  #block2 .panel1 .words span:nth-child(6) {
+    animation-delay: 1.5s;
+  }
+  #block2 .panel1 .words span:nth-child(7) {
+    animation-delay: 1.8s;
+  }
+  @keyframes move {
+    0% {
+      transform: translate(-33%, 0);
+    }
+    50% {
+      text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+    100% {
+      transform: translate(33%, 0);
+    }
+  }
+  #block2 .panel2 {
+    margin: 0 auto;
+    width: 80%;
+    font-family: sans-serif;
+    color: black;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 800px;
+    min-width: 340px;
+    overflow: hidden;
+  }
+  #block2 .tabs li {
+    list-style: none;
+    float: left;
+    padding: 0;
+    width: 65px;
+  }
+  #block2 .tabs a {
+    padding-left: 8px;
+    padding-right: 3px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    color: #fff;
+    height: 65px;
+    line-height: 90px;
+    background: linear-gradient(165deg, transparent 29%, darkgreen 30%);
+  }
+  #block2 .tabs a:hover,
+  #block2 .tabs a.active {
+    background: linear-gradient(165deg, transparent 29%, greenyellow 30%);
+    color: black;
+  }
+  #block2 .tabs a:before {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    left: 100%;
+    top: -100%;
+    height: 65px;
+    line-height: 90px;
+    width: 0;
+    border-bottom: 65px solid rgba(0, 0, 0, 0.1);
+    border-right: 7px solid transparent;
+  }
+  #block2 .tabs a.active:before {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    left: 100%;
+    top: -100%;
+    height: 65px;
+    line-height: 90px;
+    width: 0;
+    border-bottom: 65px solid rgba(0, 0, 0, 0.2);
+    border-right: 20px solid transparent;
+  }
+  #block2 .tabgroup {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  #block2 .tabgroup > div {
+    position: relative;
+    height: 600px;
+    padding: 10px;
+    margin-top: -14px;
+    background: rgba(170, 255, 50, 0.8);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  #block2 .tabgroup > div h2 {
+    text-align: center;
+  }
+  #block2 .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #block2 .podiumBox {
+    width: 400px;
+    height: 350px;
+    position: relative;
+  }
+  #block2 .podiumBox .podium {
+    position: absolute;
+    bottom: 0;
+    width: 130px;
+    border: 1px solid darkslategrey;
+    border-radius: 15% 15% 0 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+    font-family: "Bauhaus 93";
+    background: darkslategrey;
+    color: #090909;
+    box-shadow: 0 -200px 100px -120px gainsboro inset;
+    animation: background 20s infinite alternate;
+  }
+  @keyframes background {
+    50% {
+      background: lightslategrey;
+      box-shadow: 0 -200px 100px -100px darkgray inset;
+    }
+  }
+  #block2 .podiumBox .podium2 {
+    height: 90px;
+    left: 0;
+    line-height: 90px;
+  }
+  #block2 .podiumBox .podium1 {
+    height: 110px;
+    left: 132px;
+    line-height: 110px;
+  }
+  #block2 .podiumBox .podium3 {
+    height: 70px;
+    left: 264px;
+    line-height: 70px;
+  }
+  #block2 .podiumBox .winner {
+    position: absolute;
+    width: 130px;
+    font-family: Arial;
+    color: #1f648b;
+    font-weight: 400;
+  }
+  #block2 .podiumBox .winner .score {
+    font-size: 30px;
+    font-family: "Bauhaus 93";
+    background: rgba(250, 250, 250, 0.6);
+    padding: 5px;
+    border-radius: 25%;
+  }
+  #block2 .podiumBox .winner .user_name {
+    font-size: 22px;
+    color: gold;
+    text-shadow: #080808 1px 1px 5px;
+    text-align: center;
+    background: rgba(250, 250, 250, 0.6);
+    display: inline-block;
+    width: 100%;
+  }
+  #block2 .podiumBox .winner img {
+    width: 130px;
+    border-radius: 40px 0 40px 0;
+    margin-top: 5px;
+  }
+  #block2 .podiumBox .winner1 {
+    left: 132px;
+    top: 10px;
+  }
+  #block2 .podiumBox .winner2 {
+    left: 0;
+    top: 30px;
+  }
+  #block2 .podiumBox .winner3 {
+    left: 264px;
+    top: 50px;
+  }
+  #block2 .players {
+    position: absolute;
+    right: 5px;
+    top: 65px;
+    width: 45%;
+    height: 90%;
+  }
+  #block2 .players p {
+    margin: 3px;
+    display: flex;
+    width: 95%;
+    border-radius: 15px;
+    background: rgba(250, 250, 250, 0.6);
+    border-bottom: 1px solid lightslategrey;
+  }
+  #block2 .players p .place {
+    width: 10%;
+    font-size: 22px;
+    text-align: center;
+    margin: auto 0;
+  }
+  #block2 .players p img {
+    width: 60px;
+    border-radius: 0 20px 0 20px;
+    margin: auto 0;
+  }
+  #block2 .players p .user_name {
+    margin: auto 3px;
+    width: 55%;
+    font-size: 22px;
+  }
+  #block2 .players p .score {
+    margin: auto 0;
+    font-size: 22px;
+  }
+}
