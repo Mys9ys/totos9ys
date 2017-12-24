@@ -8,12 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Тотосяус</title>
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/appstyle.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
+@yield('js')
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -29,8 +31,9 @@
                     </button>
 
                     <!-- Branding Image -->
+
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Totos9ys') }}
+                        {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 
@@ -48,11 +51,32 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
+                                <a href="{{ route('preview') }}" class="dropdown-toggle" role="button" aria-expanded="false">
+                                    Анонс
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="{{ route('forecast', ['id' => 1]) }}" class="dropdown-toggle" role="button" aria-expanded="false">
+                                    Прогноз
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="{{ route('complited') }}" class="dropdown-toggle" role="button" aria-expanded="false">
+                                    Результаты
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="{{ route('ratings') }}" class="dropdown-toggle" role="button" aria-expanded="false">
+                                    Рейтинги
+                                </a>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->nik }} <img class="avatar" style="border-radius: 0 20px 0  20px ;" src="{{ Auth::user()->avatar }}" alt=""><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>tyt</li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -73,10 +97,13 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('public/js/js.js') }}"></script>
     <script src="{{ asset('public/js/app.js') }}"></script>
-    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery-3.0.0.min.js') }}"></script>
+    {{--<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>--}}
 </body>
 </html>

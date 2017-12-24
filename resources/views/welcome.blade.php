@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Тотосяус</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="{{ asset('public/css/welcome.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('public/js/jquery-3.0.0.min.js') }}"></script>
+    <script src="{{ asset('public/js/js.js') }}"></script>
+
+
+
 
     <!-- Styles -->
     <style>
@@ -67,6 +75,7 @@
     </style>
 </head>
 <body>
+@yield('js')
 <div id="block1">
     <div class="panel0">
         @if (Route::has('login'))
@@ -79,6 +88,7 @@
                 @endif
             </div>
         @endif
+        <div class="cup"><img src="{{ asset('public/image/cup.png') }}" alt="" style="border: 2px solid slateblue; box-shadow: 2px 2px 40px grey; border-radius: 25px;"></div>
         <div class="panel1">
             <span>Т</span>
             <span>о</span>
@@ -114,29 +124,29 @@
             <div class="wrapper">
                 <ul class="tabs clearfix" data-tabgroup="first-tab-group">
                     <li><a href="#tab1" class="active">Общий</a></li>
-                    <li><a href="#tab2">0-0</a></li>
-                    <li><a href="#tab3">угловые</a></li>
-                    <li><a href="#tab4"><i class="fa fa-square" aria-hidden="true" style="color: yellow"></i></a></li>
-                    <li><a href="#tab5">50%/50%</a></li>
-                    <li><a href="#tab6">исход</a></li>
-                    <li><a href="#tab7"><i class="fa fa-futbol-o" aria-hidden="true" style="color: black"></i></a></li>
-                    <li><a href="#tab8">+/- <i class="fa fa-futbol-o" aria-hidden="true" style="color: black"></i></a></li>
-                    <li><a href="#tab9">пенальти</a></li>
-                    <li><a href="#tab10"><i class="fa fa-square" aria-hidden="true" style="color: red"></i></a></li>
-                    <li><a href="#tab11">больший %</a></li>
+                    <li><a href="#tab2" title="Счет"><i class="tablo">0-0</i></a></li>
+                    <li><a href="#tab3" title="Угловые"><img src="{{ asset('public/image/corner.png') }}" alt=""  style="width: 25px"></a></li>
+                    <li><a href="#tab4" title="Желтые карточки"><i class="fa fa-square" aria-hidden="true" style="color: yellow"></i></a></li>
+                    <li><a href="#tab5" title="Процент владения">%/%</a></li>
+                    <li><a href="#tab6" title="Исход матча">исход</a></li>
+                    <li><a href="#tab7" title="Сумма мячей">х<i class="fa fa-futbol-o" aria-hidden="true" style="color: black"></i></a></li>
+                    <li><a href="#tab8" title="Разница мячей">+/- <i class="fa fa-futbol-o" aria-hidden="true" style="color: black"></i></a></li>
+                    <li><a href="#tab9" title="Пенальти">11m</a></li>
+                    <li><a href="#tab10" title="Красные карточки"><i class="fa fa-square" aria-hidden="true" style="color: red"></i></a></li>
+                    <li><a href="#tab11" title="Угадана команда с больший % владения">>%</a></li>
                 </ul>
                 <section id="first-tab-group" class="tabgroup">
                     <div id="tab1">
                         <h2>Общий рейтинг</h2>
-                        @include('layouts.ratings', ['props' => $general])
+                        {{--@include('layouts.ratingsTable', ['props' => $general])--}}
                     </div>
                     <div id="tab2">
                         <h2>Точный счет матча</h2>
-                        @include('layouts.ratings', ['props' => $score])
+                        {{--@include('layouts.ratingsTable', ['props' => $score])--}}
                     </div>
                     <div id="tab3">
                         <h2>Количество угловых</h2>
-                        @include('layouts.ratings', ['props' => $corners])
+                        {{--@include('layouts.ratingsTable', ['props' => $corners])--}}
                     </div>
                     <div id="tab4">
                         <h2>Желтые карточки</h2>
@@ -167,7 +177,19 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('public/js/jquery.min.js') }}"></script>
+
+<?if(Auth::user()->role == 'admin'){?>
+    <div class="admin_block">
+<!--        --><?//dd('mi tyt')?>
+    </div>
+<?}?>
+@include('humor')
+<div class="stat_block">
+
+</div>
+
+
+
 <script src="{{ asset('public/js/welcome.js') }}"></script>
 </body>
 </html>
@@ -179,6 +201,3 @@
 
 
 
-
-
-{{--@endsection--}}

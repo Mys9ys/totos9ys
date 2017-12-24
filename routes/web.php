@@ -16,12 +16,32 @@
 //});
 Route::get('/', ['uses'=>'WelcomeController@execute', 'as'=>'/']);
 
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/preview', 'PreviewController@execute')->name('preview');
+
+Route::match(['get', 'post'],'/forecast/{id?}', ['uses'=>'ForecastController@execute', 'as'=>'forecast'], ['id' => 1] ,function ($id = '1'){
+    return $id;
+});
+
+//Route::get('/forecast/{match_id}', 'ForecastController@execute')->name('forecast');
+//Route::post('/forecast', 'ForecastController@execute')->name('forecast');
+Route::post('/forecastconfirm', 'ForecastController@execute')->name('forecastconfirm');
+Route::get('/complited', 'ComplitedController@execute')->name('complited');
+Route::get('/ratings', 'RatingsController@execute')->name('ratings');
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// логин через соцсети
+Route::post('ulogin', 'UloginController@login');
+// подгружаем юмор
+Route::post('/humorLoad', 'ajax\humorLoad@load');
+// учитываем просмотры
+Route::post('/perlViews', 'ajax\humorLoad@views');
+// Ставим лайк перлу
+Route::post('/perlLikes', 'ajax\humorLoad@likes');
