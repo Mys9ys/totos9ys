@@ -1,0 +1,74 @@
+.humor_block{
+  width: 100%;
+  min-height: 70px;
+  background: firebrick;
+}
+.perl_box{
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 10px;
+  background: rgb(170,170,170);
+  padding: 25px;
+  .perl_stat{
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    top:5px;
+    right: 5px;
+    div{
+      float: right;
+      padding: 5px;
+    }
+  }
+  p{
+    color: rgb(40,40,40);
+    font-weight: bold;
+  }
+  .likes_perl, .next_perl, .add_perl{
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background: rgb(255,255,255);
+    color: rgb(40,40,40);
+    cursor: pointer;
+  }
+  .next_perl, .add_perl{
+    margin-left: 20px;
+  }
+}
+.add_perl_form{
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  margin-left: 35%;
+  margin-bottom: 35px;
+  border-radius: 10px;
+  background: rgb(170,170,170);
+  padding: 25px;
+  .close_form{
+    display: inline-block;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    color: rgb(40, 40, 40);
+    cursor: pointer;
+  }
+  .perl_add_text{
+    width: 100%;
+    min-height: 50px;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  .confirm_add_perl{
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background: rgb(255,255,255);
+    color: rgb(40,40,40);
+    cursor: pointer;
+  }
+}

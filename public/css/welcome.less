@@ -1,11 +1,13 @@
 @media screen
 {
-  #block1 .panel1 span {
+  #block1 {
+    .panel1 span {
+
     position: relative;
     top: 20px;
     display: inline-block;
     animation: bounce .5s ease infinite alternate;
-    font-family: 'Titan One', cursive;
+    font-family: 'Titan One';
     font-size: 80px;
     color: #FFF;
     text-shadow: 0 1px 0 #CCC,
@@ -18,16 +20,29 @@
     0 8px 0 transparent,
     0 9px 0 transparent,
     0 10px 10px rgba(0, 0, 0, .4);
+    }
+    .panel1 span:nth-child(2) {
+      animation-delay: .1s;
+    }
+    .panel1 span:nth-child(3) {
+      animation-delay: .2s;
+    }
+    .panel1 span:nth-child(4) {
+      animation-delay: .3s;
+    }
+    .panel1 span:nth-child(5) {
+      animation-delay: .4s;
+    }
+    .panel1 span:nth-child(6) {
+      animation-delay: .5s;
+    }
+    .panel1 span:nth-child(7) {
+      animation-delay: .6s;
+    }
+    .panel1 span:nth-child(8) {
+      animation-delay: .7s;
+    }
   }
-
-  #block1 .panel1 span:nth-child(2) { animation-delay: .1s; }
-  #block1 .panel1 span:nth-child(3) { animation-delay: .2s; }
-  #block1 .panel1 span:nth-child(4) { animation-delay: .3s; }
-  #block1 .panel1 span:nth-child(5) { animation-delay: .4s; }
-  #block1 .panel1 span:nth-child(6) { animation-delay: .5s; }
-  #block1 .panel1 span:nth-child(7) { animation-delay: .6s; }
-  #block1 .panel1 span:nth-child(8) { animation-delay: .7s; }
-
   @keyframes bounce {
     100% {
       top: -20px;
@@ -150,6 +165,14 @@
       max-width:800px;
       min-width:340px;
       overflow:hidden;
+      .tablo{
+        color: goldenrod; text-shadow: gold 1px 1px 3px;
+        padding: 3px; border-radius: 3px; border: 1px solid #2F3133;
+        box-shadow:
+              1px 1px gray,
+              -1px -1px gray;
+        background-color: #080808; font-size: 19px; text-decoration: none;
+      }
     }
 
     .tabs {

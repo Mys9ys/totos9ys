@@ -4,7 +4,7 @@
     top: 20px;
     display: inline-block;
     animation: bounce .5s ease infinite alternate;
-    font-family: 'Titan One', cursive;
+    font-family: 'Titan One';
     font-size: 80px;
     color: #FFF;
     text-shadow: 0 1px 0 #CCC, 0 2px 0 #CCC, 0 3px 0 #CCC, 0 4px 0 #CCC, 0 5px 0 #CCC, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
@@ -151,6 +151,17 @@
     max-width: 800px;
     min-width: 340px;
     overflow: hidden;
+  }
+  #block2 .panel2 .tablo {
+    color: goldenrod;
+    text-shadow: gold 1px 1px 3px;
+    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid #2F3133;
+    box-shadow: 1px 1px gray, -1px -1px gray;
+    background-color: #080808;
+    font-size: 19px;
+    text-decoration: none;
   }
   #block2 .tabs li {
     list-style: none;
