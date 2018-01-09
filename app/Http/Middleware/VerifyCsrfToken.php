@@ -12,7 +12,11 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'ulogin'
+        'ulogin',
+        '/humorLoad',
+        '/perlViews',
+        '/perlLikes',
+        '/addPerl',
         //
     ];
 }

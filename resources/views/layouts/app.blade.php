@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Тотосяус</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/appstyle.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
-</head>
-@yield('js')
+@include('layouts.header')
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -47,8 +30,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            {{--<li><a href="{{ route('login') }}">Login</a></li>--}}
+                            {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                         @else
                             <li class="dropdown">
                                 <a href="{{ route('preview') }}" class="dropdown-toggle" role="button" aria-expanded="false">
@@ -100,10 +83,7 @@
 
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('public/js/js.js') }}"></script>
-    <script src="{{ asset('public/js/app.js') }}"></script>
-    <script src="{{ asset('public/js/jquery-3.0.0.min.js') }}"></script>
+@include('layouts.footer')
     {{--<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>--}}
 </body>
 </html>

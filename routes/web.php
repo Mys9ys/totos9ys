@@ -11,14 +11,15 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Route::get('/', ['uses'=>'WelcomeController@execute', 'as'=>'/']);
+Route::get('/', function () {
+    return view('welcome');
+});
+//Route::match('/', ['uses'=>'WelcomeController@execute', 'as'=>'/']);
 
 
 
-//Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/preview', 'PreviewController@execute')->name('preview');
 
 Route::match(['get', 'post'],'/forecast/{id?}', ['uses'=>'ForecastController@execute', 'as'=>'forecast'], ['id' => 1] ,function ($id = '1'){
@@ -45,3 +46,5 @@ Route::post('/humorLoad', 'ajax\humorLoad@load');
 Route::post('/perlViews', 'ajax\humorLoad@views');
 // Ставим лайк перлу
 Route::post('/perlLikes', 'ajax\humorLoad@likes');
+// Добавляем шутку
+Route::post('/addPerl', 'ajax\humorLoad@adds');

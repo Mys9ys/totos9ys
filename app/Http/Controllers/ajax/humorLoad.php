@@ -33,4 +33,19 @@ class humorLoad extends Controller
         else { return json_encode('Проблема');}
     }
 
+    public function adds(Request $request){
+        $perls = Humor::where('text', '=', $request->text)->first();
+
+        if($perls != null){
+            return json_encode('Такая шутка уже есть');
+        } else {
+            $perl = new Humor();
+            $perl->user = $request->user;
+            $perl->text = $request->text;
+            $perl->active = $request->active;
+            if ($perl->save()) {return json_encode('Ваша шутка будет добавлена после модерации');}
+            else { return json_encode('Проблема');}
+        }
+    }
+
 }
