@@ -1,0 +1,9 @@
+#uLogin {
+  display: none;
+}
+.login_social {
+  padding: 10px;
+  margin: auto;
+  vertical-align: middle;
+  cursor: pointer;
+}

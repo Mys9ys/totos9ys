@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/block/header/style.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/appstyle.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -40,6 +41,11 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <a href="{{ route('home') }}">
+                                   Профиль
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -58,20 +64,5 @@
     </div>
 </nav>
 
-<style>
-    .login_social{
-        padding: 10px;
-        margin: auto;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-</style>
-<script>
-    $(document).ready(function () {
-        $('.login_social').click(function () {
-            $('#loginModal').modal('show');
-        });
-    });
-</script>
 
 @include('auth.social')

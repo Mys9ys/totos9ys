@@ -5,11 +5,6 @@
                              providers=facebook,vkontakte,odnoklassniki,mailru;hidden=other;
                              redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST']) }}/ulogin;mobilebuttons=0;">
 </div>
-<style>
-    #uLogin{
-        display: none;
-    }
-</style>
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -20,22 +15,9 @@
             </div>
             <div class="modal-body">
             </div>
-            <div class="modal-footer">
-            </div>
+            {{--<div class="modal-footer"></div>--}}
         </div>
     </div>
 </div>
 
-
-
-<script>
-    $(document).ready(function () {
-        var content = $('#uLogin').detach();
-        $('#loginModal').find('.modal-body').append(content);
-        $('#uLogin').show();
-        $('.modal_test').click(function () {
-            $('#loginModal').modal('show');
-        });
-    });
-</script>
 <script src="//ulogin.ru/js/ulogin.js"></script>

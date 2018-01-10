@@ -5,7 +5,7 @@ namespace App\Http\Controllers\ajax;
 use App\Humor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+date_default_timezone_set('Europe/Moscow');
 
 class humorLoad extends Controller
 {

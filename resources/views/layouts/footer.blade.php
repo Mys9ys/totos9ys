@@ -29,13 +29,23 @@
 <script>
     $(document).ready(function () {
         // блокируем события кнопок ответа при отсутствии регистрации
-        if (!$('.user_info').data('user')) {
-            console.log('mi tyt');
-            $('.humor_block').off('click', '.add_perl, .likes_perl');
-            $('.humor_block').on('click', '.add_perl, .likes_perl', function () {
-                $('#loginModal').modal('show');
-            });
+//        if (!$('.user_info').data('user')) {
+//            console.log('mi tyt');
+//            $('.humor_block').off('click', '.add_perl, .likes_perl');
+//            $('.humor_block').on('click', '.add_perl, .likes_perl', function () {
+//                $('#loginModal').modal('show');
+//            });
+//
+//        }
+        // вырезаем улогин и вставляем в модальное окно
+        var content = $('#uLogin').detach();
+        $('#loginModal').find('.modal-body').append(content);
+        $('#uLogin').show();
 
-        }
+        // кнопка войти
+        $('.login_social').click(function () {
+            $('#loginModal').modal('show');
+        });
+
     });
 </script>

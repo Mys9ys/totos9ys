@@ -1,5 +1,5 @@
-<link href="{{ asset('public/humor/style.css') }}" rel="stylesheet">
+<link href="{{ asset('public/block/humor/style.css') }}" rel="stylesheet">
 
 <div class="humor_block"></div>
 
-<script src="{{ asset('public/humor/script.js') }}"></script>
+<script src="{{ asset('public/block/humor/script.js') }}"></script>

@@ -1,0 +1,83 @@
+@bgrndColor: rgba(30, 144, 255, 0.7);
+@bgrndColorLite: rgb(176, 224, 230);
+@textColor: rgb(40, 40, 40);
+@btntxt: rgb(255, 255, 255);
+@btnColor: rgba(0, 191, 255, 0.9);
+
+.humor_block {
+  width: 100%;
+  min-height: 70px;
+  background: @bgrndColor;
+  .perl_box {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    background: @bgrndColorLite;
+    padding: 25px;
+    .perl_stat {
+      position: absolute;
+      display: inline-block;
+      width: 50%;
+      top: 5px;
+      right: 5px;
+      div {
+        float: right;
+        padding: 5px;
+      }
+    }
+    p {
+      color: @textColor;
+      font-weight: bold;
+    }
+    .likes_perl, .next_perl, .add_perl {
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 10px;
+      background: @btnColor;
+      color: @btntxt;
+      cursor: pointer;
+    }
+    .next_perl, .add_perl {
+      margin-left: 20px;
+    }
+  }
+  .add_perl_form {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    background: @bgrndColorLite;
+    padding: 25px;
+    .close_form {
+      display: inline-block;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: @textColor;
+      cursor: pointer;
+    }
+    .perl_add_text {
+      width: 100%;
+      min-height: 50px;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+    .confirm_add_perl {
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 10px;
+      background: @btnColor;
+      color: @btntxt;
+      cursor: pointer;
+    }
+  }
+  .likes_perl:hover, .next_perl:hover, .add_perl:hover, .confirm_add_perl:hover {
+    box-shadow: 2px 2px rgba(0, 191, 255, 0.4);
+  }
+}
