@@ -13,7 +13,6 @@
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('public/block/header/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/appstyle.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Fonts -->

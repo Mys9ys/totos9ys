@@ -1,0 +1,13 @@
+.preview_block {
+  width: 100%;
+  min-height: 70px;
+  background: #9cc218;
+}
+.preview_block .container {
+  background: #d7e7a3;
+  min-height: 70px;
+}
+.preview_block #avPreview {
+  max-width: 70px;
+  height: 50px;
+}

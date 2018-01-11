@@ -16,7 +16,7 @@
     ); ?>
     <div class="achievs container">
         <?foreach ($arAchievs as $achiev){?>
-        <div class="achiev label-primary">
+        <div class="achiev" data-toggle="tooltip" data-placement="top" title="Tooltip on &#013; left Tooltip on &#013; left">
             <i class="fa <?=$achiev?> " aria-hidden="true"></i>
         </div>
         <?}?>

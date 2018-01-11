@@ -2,7 +2,8 @@
 
 @include('preview')
 @include('humor')
-@include('achievements')
+@include('events')
+{{--@include('achievements')--}}
 
 @include('layouts.footer')
 

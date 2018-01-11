@@ -1,0 +1,36 @@
+@bgrndColor: rgba(244, 164, 96, 0.7);
+@bgrndColorLite: rgb(255, 222, 173);
+@textColor: rgb(40, 40, 40);
+@btntxt: rgb(255, 255, 255);
+@btnColor: rgba(188, 143, 143, 0.9);
+@adminBgrndColor: rgb(255, 99, 71);
+@adminBgrndColorLite: rgb(255, 160, 120);
+.events_block{
+  width: 100%;
+  min-height: 70px;
+  background: @bgrndColor;
+  .container{
+    background: @bgrndColorLite;
+    min-height: 70px;
+  }
+}
+.events_admin_block{
+  width: 100%;
+  min-height: 70px;
+  background: @adminBgrndColor;
+  .container{
+    background: @adminBgrndColorLite;
+    min-height: 70px;
+  }
+}
+.add_events{
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background: @btnColor;
+    color: @btntxt;
+    cursor: pointer;
+}
+.add_events:hover{
+  box-shadow: 2px 2px rgba(188, 143, 143, 0.4);
+}

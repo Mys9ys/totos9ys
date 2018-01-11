@@ -17,6 +17,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/perlViews',
         '/perlLikes',
         '/addPerl',
+        '/addAvatar',
         //
     ];
 }

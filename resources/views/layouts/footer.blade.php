@@ -20,11 +20,9 @@
 
 
 <!-- Scripts -->
-<script src="{{ asset('public/js/js.js') }}"></script>
 <script src="{{ asset('public/js/app.js') }}"></script>
 <script src="{{ asset('public/js/jquery.cookie.js') }}"></script>
 
-@include('auth.social')
 
 <script>
     $(document).ready(function () {
@@ -46,6 +44,11 @@
         $('.login_social').click(function () {
             $('#loginModal').modal('show');
         });
+
+        // подсказки на ачивках
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
 
     });
 </script>

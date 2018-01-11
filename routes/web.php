@@ -48,3 +48,5 @@ Route::post('/perlViews', 'ajax\humorLoad@views');
 Route::post('/perlLikes', 'ajax\humorLoad@likes');
 // Добавляем шутку
 Route::post('/addPerl', 'ajax\humorLoad@adds');
+// Добавляем картинку - аватар для турнира
+Route::post('/addAvatar', 'ajax\events@adds');
