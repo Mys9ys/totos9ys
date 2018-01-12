@@ -1,12 +1,22 @@
 $(document).ready(function () {
+    avatar = {};
+    $.ajaxSetup({
+        headers: {
+            'X-XSRF-TOKEN': $('meta[name="_token"]').attr('content'),
+            'X-Requested-With': 'XMLHttpRequest',
+            contentType: false, // важно - убираем форматирование данных по умолчанию
+            processData: false, // важно - убираем преобразование строк по умолчанию
+        }
+    });
     $('.add_events').click(function () {
         var data = {};
-        $('.add_event').children().each(function () {
+        $('.add_event').find('.event-info').each(function () {
             var $this = $(this);
             if ($this.attr('data')) {
                 data[$this.attr('data')] = $this.val();
                 if($this.attr('data')=='avatar'){
-                    console.log('nawli kartinky');
+                    console.log('nawli kartinky', avatar);
+                    data['avatar']= avatar;
                 }
             }
         });
@@ -16,18 +26,35 @@ $(document).ready(function () {
         // console.log('end',end);
         console.log('data', data);
         console.log('avatar', avatar);
-        $.post(
-            '/addAvatar',
-            avatar,
-            function (result) {
+        $.ajax({
+            url : '/addAvatar',
+            // url : '/addAvatar',
+            type : "POST",
+            contentType: false, // важно - убираем форматирование данных по умолчанию
+            processData: false, // важно - убираем преобразование строк по умолчанию
+            data : 'vxjv',
+            success:function(result){
                 console.log(result);
-                //         var arResult = result.arHumor;
-                //         getRandPerl(arResult);
-                //         $('.humor_block').on('click', '.next_perl', function () {
-                //             getRandPerl(arResult);
-                //         });
-            } , 'json'
-        );
+            }
+        });
+        // $.post(
+        //         '/addAvatar',
+        //         data,
+        //         function (result) {
+        //
+        //             //         var arResult = result.arHumor;
+        //             //         getRandPerl(arResult);
+        //             //         $('.humor_block').on('click', '.next_perl', function () {
+        //             //             getRandPerl(arResult);
+        //             //         });
+        //         } , 'json'
+        // );
+
+
+        //     contentType: false, // важно - убираем форматирование данных по умолчанию
+        //     processData: false, // важно - убираем преобразование строк по умолчанию
+
+        // );
         // var data ={};
         // data.img = input.files[0];
         // console.log('input.files', $("#avatar").files);
@@ -44,7 +71,7 @@ $(document).ready(function () {
             reader.readAsDataURL(input.files[0]);
         }
     }
-    avatar = {};
+
     $("#avatar").change(function () {
         avatar = this.files[0];
 

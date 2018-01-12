@@ -41,7 +41,7 @@ class humorLoad extends Controller
         } else {
             $perl = new Humor();
             $perl->user = $request->user;
-            $perl->text = $request->text;
+            $perl->text = addslashes($request->text);
             $perl->active = $request->active;
             if ($perl->save()) {return json_encode('Ваша шутка будет добавлена после модерации');}
             else { return json_encode('Проблема');}
