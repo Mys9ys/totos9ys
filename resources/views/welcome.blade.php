@@ -1,9 +1,9 @@
 @include('layouts.header')
 
-@include('preview')
-@include('humor')
-@include('events')
-{{--@include('achievements')--}}
+@include('block.preview')
+@include('block.humor')
+@include('block.events')
+@include('block.achievements')
 
 @include('layouts.footer')
 

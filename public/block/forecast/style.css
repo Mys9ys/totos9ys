@@ -1,0 +1,277 @@
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clr {
+  clear: both;
+}
+.football-shadow {
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+}
+.football-shadow-lite {
+  box-shadow: inset 0px 2px 8px 0px #d7e7a3;
+}
+.forecast_block {
+  width: 100%;
+  min-height: 70px;
+}
+.forecast-football {
+  background: #9cc218;
+}
+.forecast-football .container {
+  background: #d7e7a3;
+  min-height: 70px;
+}
+.match-wrap {
+  width: 820px;
+}
+.match-info {
+  display: inline-block;
+  padding: 5px;
+}
+.match-time,
+.match-date,
+.match-variance {
+  padding: 5px;
+}
+.info-box {
+  border-radius: 10px;
+  margin-bottom: 1px;
+}
+.info-box span {
+  margin-left: 5px;
+}
+.teams-wrap {
+  border: 1px solid #9cc218;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.home-team {
+  display: inline-block;
+  width: 400px;
+}
+.visit-team {
+  display: inline-block;
+  width: 400px;
+}
+.team-flag {
+  width: 50px;
+}
+.team-flag img {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.team-name {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.team-goal {
+  width: 50px;
+  text-align: center;
+  padding: 15px 0px 10px 12px;
+  background: #d7e7a3;
+  border: 1px solid #9cc218;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.forecast-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.box-title {
+  padding: 5px;
+  background: #d7e7a3;
+  border-radius: 10px 0 0 10px;
+}
+.result-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+.result-box {
+  font-size: 16px;
+  padding: 5px;
+}
+.result-box span {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.select-box {
+  background: #d7e7a3;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+}
+.nobody_win {
+  width: 80px;
+  border-left: 1px solid #d7e7a3;
+  border-right: 1px solid #d7e7a3;
+}
+.goals-box {
+  font-size: 16px;
+  padding: 5px;
+  display: inline-block;
+}
+.goal-count {
+  padding: 5px 15px;
+}
+.goal-count span {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #d7e7a3;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+  font-weight: bold;
+}
+.goals-margin-title {
+  background: #d7e7a3;
+  border-radius: 10px 0 0 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+.goals-margin-title .margin-icon {
+  font-size: 18px;
+}
+.goals-sum-title {
+  background: #d7e7a3;
+  font-weight: bold;
+  padding: 10px;
+}
+.goals-sum-title .sum-icon {
+  font-size: 18px;
+}
+.possession-title {
+  background: #d7e7a3;
+  border-radius: 10px 0 0 10px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 16px;
+}
+.possession-team {
+  margin: 5px;
+  padding: 5px;
+  background: #d7e7a3;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+}
+.count-possession {
+  display: inline-block;
+  width: 50px;
+  margin: 5px;
+  padding: 3px;
+  border: 1px solid #9cc218;
+  background: #d7e7a3;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+}
+#possession {
+  margin-top: 14px;
+  -webkit-appearance: none;
+  border-radius: 10px;
+  background: yellow;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+  width: 320px;
+  height: 12px;
+  outline: none;
+  border: 1px solid #D4D4D4;
+}
+#possession::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background-image: url("/public/image/ball.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: .1s;
+}
+.card-title {
+  background: #d7e7a3;
+  border-radius: 10px 0 0 10px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 16px;
+}
+.yellow-card-title {
+  color: yellow;
+}
+.red-card-title {
+  color: red;
+}
+.card-icon {
+  display: inline-block;
+  width: 10px;
+  height: 15px;
+  border-radius: 3px;
+  background: yellow;
+}
+.red {
+  background: red;
+}
+.card-title-box {
+  margin: 5px;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
+  background: #d7e7a3;
+}
+.yellowLite {
+  background: #f3f781;
+}
+.redLite {
+  background: #ff4e33;
+}
+.card-box {
+  margin: 5px;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #9cc218;
+  border-radius: 10px;
+}
+.forecast-hockey {
+  background: rgba(30, 144, 255, 0.7);
+}
+.forecast-hockey .container {
+  background: #87ceeb;
+  min-height: 70px;
+}
+.checkbox-imitate {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #82a115;
+  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
+  cursor: pointer;
+}
+.checkbox-imitate .imitate-check {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+}

@@ -1,7 +1,5 @@
-@extends('layouts.app')
+@include('layouts.header')
 
-@section('content')
-<div class="container">
+@include('forecast')
 
-</div>
-@endsection
+@include('layouts.footer')

@@ -8,6 +8,9 @@ $(document).ready(function () {
             processData: false, // важно - убираем преобразование строк по умолчанию
         }
     });
+    $('.btn-avatar').click(function () {
+          $('#avatar').click();
+    });
     $('.add_events').click(function () {
         var data = {};
         $('.add_event').find('.event-info').each(function () {

@@ -61,3 +61,17 @@ button {
 .data-event-title {
   padding: 6px;
 }
+.btn-avatar {
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+}
+#avatar {
+  visibility: hidden;
+}
+#avPreview {
+  max-width: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -31,6 +31,7 @@ Route::match(['get', 'post'],'/forecast/{id?}', ['uses'=>'ForecastController@exe
 Route::post('/forecastconfirm', 'ForecastController@execute')->name('forecastconfirm');
 Route::get('/complited', 'ComplitedController@execute')->name('complited');
 Route::get('/ratings', 'RatingsController@execute')->name('ratings');
+Route::get('/profile', 'ProfileController@execute')->name('profile');
 
 
 

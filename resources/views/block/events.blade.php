@@ -29,9 +29,12 @@
                     </select>
                     <span class="event-title">Вид спорта</span>
                 </div>
-                <span>Выберите аватар</span>
+                <div class="form-wrap">
+                    <span class="event-title btn-avatar">Выберите аватар</span>
+                </div>
+
                 <img src="" alt="" id="avPreview">
-                <input type="file" id="avatar" name="avatar" accept="image/* " data="avatar" class="event-info">
+                <input type="file" id="avatar" name="avatar" accept="image/jpeg,image/png,image/gif" data="avatar" class="event-info" >
                 <div class="form-wrap">
                     <input type="date" class="event-info" data="start_event">
                     <span class="event-title data-event-title">Дата начала турнира</span>
