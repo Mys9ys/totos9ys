@@ -364,12 +364,12 @@ button {
 }
 .free-kick-icon .whistle-line {
   position: absolute;
-  left: 15px;
-  top: 3px;
+  left: 17px;
+  top: 5px;
   width: 8px;
-  height: 3px;
+  height: 2px;
   background: #282828;
-  transform: rotate(-45deg);
+  transform: rotate(-15deg);
   display: inline-block;
 }
 .free-kick-icon .fa-futbol-o {
