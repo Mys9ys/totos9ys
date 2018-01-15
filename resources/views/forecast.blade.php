@@ -72,17 +72,18 @@
                     <input type="number" class="yellow-card card-box yellowLite float-left" min="0">
                     <div class="red-card-title card-title-box float-left football-shadow"><i class="card-icon red"></i><span>Красные</span></div>
                     <input type="number" class="red-card card-box redLite float-left" min="0">
-                    <div class="corner-title">Угловые</div>
+                    <div class="corner-title float-left football-shadow"><i class="corner-icon"><i class="circle-corner"></i></i><span>Угловые</span></div>
+                    <input type="number" class="corner card-box float-left" min="0">
+                </div>
+                <div class="shot-wrap forecast-football info-box forecast-box">
+                    <div class="shot-title float-left football-shadow">Удары</div>
+                    <div class="all-shot-title float-left football-shadow">Всего</div>
                 </div>
             </div>
-
-
-
-
-
-
         </div>
     </div>
+    <i class="in-gate-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
+    <i class="all-shot-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
 
     <div class="subscribe-checkbox">
         <div class="checkbox-imitate">

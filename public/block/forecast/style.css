@@ -233,19 +233,76 @@ button {
   border-radius: 10px;
   background: #d7e7a3;
 }
-.yellowLite {
-  background: #f3f781;
-}
-.redLite {
-  background: #ff4e33;
-}
 .card-box {
   margin: 5px;
   width: 50px;
   text-align: center;
   padding: 5px;
   border: 1px solid #9cc218;
+  background: #d7e7a3;
   border-radius: 10px;
+}
+.yellowLite {
+  background: #f3f781;
+}
+.redLite {
+  background: #ff4e33;
+}
+.corner-icon {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-left: 2px solid #282828;
+  border-bottom: 2px solid #282828;
+  overflow: hidden;
+}
+.corner-icon .circle-corner {
+  display: inline-block;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #282828;
+  border-radius: 50%;
+}
+.corner-title {
+  background: #d7e7a3;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 16px;
+}
+.in-gate-icon {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 15px;
+  border-left: 2px solid #282828;
+  border-top: 2px solid #282828;
+  border-right: 2px solid #282828;
+}
+.in-gate-icon .fa-futbol-o {
+  position: absolute;
+  font-size: 9px;
+  bottom: 0;
+  left: 6px;
+}
+.all-shot-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  width: 25px;
+  height: 15px;
+  border-left: 2px solid #282828;
+  border-top: 2px solid #282828;
+  border-right: 2px solid #282828;
+}
+.all-shot-icon .fa-futbol-o {
+  position: absolute;
+  font-size: 9px;
+  bottom: -10px;
+  left: 6px;
 }
 .forecast-hockey {
   background: rgba(30, 144, 255, 0.7);
