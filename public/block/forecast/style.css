@@ -186,6 +186,16 @@ button {
 .goals-sum-title .sum-icon {
   font-size: 18px;
 }
+.goals-margin,
+.goals-sum {
+  margin: 5px;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #9cc218;
+  background: #d7e7a3;
+  border-radius: 10px;
+}
 .possession-title {
   background: #d7e7a3;
   border-radius: 10px 0 0 10px;
@@ -365,7 +375,7 @@ button {
 .free-kick-icon .whistle-line {
   position: absolute;
   left: 17px;
-  top: 5px;
+  top: 6px;
   width: 8px;
   height: 2px;
   background: #282828;

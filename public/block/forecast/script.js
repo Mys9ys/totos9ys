@@ -16,8 +16,7 @@ $(document).ready(function () {
     $('.result-box').click(function () {
         $('.result-box').removeAttr('data-select').find('span').removeClass('select-box');
         var $this = $(this);
-        $this.find('span').addClass('select-box');
-        $this.attr('data-select','1');
+        $this.attr('data-select','1').find('span').addClass('select-box').parent().parent().find('.lamp').addClass('lamp-confirm');
     });
 
     // проставление исхода матча при операцией со счетом
@@ -27,9 +26,8 @@ $(document).ready(function () {
         var home = forecast.home = Number($('.goal-home').val());
         var visit = forecast.visit = Number($('.goal-visit').val());
         var result = home-visit;
-        $('.goals-margin').find('span').text(result);
-        $('.goals-sum').find('span').text(home+visit);
-        $('.goals-sum').parent().find('.lamp').addClass('lamp-confirm');
+        $('.goals-margin').val(result);
+        $('.goals-sum').val(home+visit).parent().find('.lamp').addClass('lamp-confirm');
         $('.home_win').parent().find('.lamp').addClass('lamp-confirm');
         if (result>0){
             $('.home_win').attr('data-select','1').find('span').addClass('select-box');
@@ -38,6 +36,10 @@ $(document).ready(function () {
         }else {
             $('.nobody_win').attr('data-select','1').find('span').addClass('select-box');
         }
+    });
+
+    $('.goals-margin').on('change', function () {
+        $(this).siblings($(this).data()+'title');
     });
     // %владения мячом
     $('#possession').on("change", function() {
