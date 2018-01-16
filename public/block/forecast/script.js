@@ -27,7 +27,9 @@ $(document).ready(function () {
         var visit = forecast.visit = Number($('.goal-visit').val());
         var result = home-visit;
         $('.goals-margin').val(result);
+        forecast.margin = result;
         $('.goals-sum').val(home+visit).parent().find('.lamp').addClass('lamp-confirm');
+        forecast.sum = home+visit;
         $('.home_win').parent().find('.lamp').addClass('lamp-confirm');
         if (result>0){
             $('.home_win').attr('data-select','1').find('span').addClass('select-box');
@@ -37,9 +39,17 @@ $(document).ready(function () {
             $('.nobody_win').attr('data-select','1').find('span').addClass('select-box');
         }
     });
-
+    // разница мячей
     $('.goals-margin').on('change', function () {
-        $(this).siblings($(this).data()+'title');
+        $(this).parent().children('.'+$(this).attr('data')+'-title').find('.lamp').addClass('lamp-confirm');
+        forecast.margin = $(this).val();
+        console.log('margin', forecast);
+    });
+    // сумма мячей
+    $('.goals-sum').on('change', function () {
+        $(this).parent().children('.'+$(this).attr('data')+'-title').find('.lamp').addClass('lamp-confirm');
+        forecast.sum = $(this).val();
+        console.log('margin', forecast);
     });
     // %владения мячом
     $('#possession').on("change", function() {
