@@ -83,12 +83,20 @@ $(document).ready(function () {
         console.log('forecast', forecast);
     });
     $('.series-penalty, .extra-time').click(function () {
-        console.log('mi tyt');
+        $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
         if($(this).text() == 'не будет') {
             $(this).text('будет');
         } else {
             $(this).text('не будет');
         }
     });
+    // перевод фокуса на input
+    $('.box-title').click(function () {
+        $(this).parent().children().eq($(this).index()+1).focus();
+    });
+    $('input[type=number]').on('change', function(){
+        $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
+    });
+
 });
 

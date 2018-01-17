@@ -47,7 +47,9 @@
                 </div>
                 <div class="match-result-wrap forecast-football info-box forecast-box">
 
-                    <div class="box-title result-title float-left football-shadow relative">Результат матча<p
+                    <div class="result-title box-title title-left float-left football-shadow relative">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                        <span>Результат матча</span><p
                                 class="lamp"></p></div>
 
                     <div class="home_win result-box float-left">
@@ -61,22 +63,24 @@
                     </div>
                 </div>
                 <div class="goals-count-wrap forecast-football info-box forecast-box">
-                    <div class="goals-margin-title goals-box float-left football-shadow relative">
-                        <i class="margin-icon">+/-</i> <i class="fa fa-futbol-o" aria-hidden="true"></i><span>Разница мячей</span>
+                    <div class="goal-preview box-title title-left float-left football-shadow">
+                        Голы
+                    </div>
+                    <div class="goals-margin-title box-title float-left football-shadow relative">
+                        <i class="margin-icon">+/- <i class="fa fa-futbol-o" aria-hidden="true"></i></i><span>Разница</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="goals-margin goals-box float-left goal-count" placeholder="..."
+                    <input type="number" class="goals-margin input-box float-left" placeholder="..."
                            data="goals-margin">
-                    <div class="goals-sum-title goals-box float-left football-shadow relative">
-                        <i class="sum-icon">∑</i> <i class="fa fa-futbol-o"
-                                                     aria-hidden="true"></i><span>Сумма мячей</span>
+                    <div class="goals-sum-title box-title float-left football-shadow relative">
+                        <i class="sum-icon">∑ <i class="fa fa-futbol-o" aria-hidden="true"></i></i><span>Количество(сумма)</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="goals-sum goals-box float-left goal-count" placeholder="..."
+                    <input type="number" class="goals-sum input-box float-left" placeholder="..."
                            data="goals-sum">
                 </div>
                 <div class="possession-wrap forecast-football info-box forecast-box">
-                    <div class="possession-title float-left football-shadow relative">Владение мячом %<p
+                    <div class="possession-title box-title title-left float-left football-shadow relative">Владение мячом %<p
                                 class="lamp"></p></div>
                     <div class="possession-team float-left">потяните бегунок
                         <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
@@ -87,56 +91,28 @@
                     </div>
                 </div>
                 <div class="card-wrap forecast-football info-box forecast-box">
-                    <div class="card-title float-left football-shadow">Карточки</div>
-                    <div class="yellow-card-title card-title-box float-left football-shadow"><i
+                    <div class="card-title box-title title-left float-left football-shadow">Карточки</div>
+                    <div class="yellow-card-title box-title float-left football-shadow"><i
                                 class="card-icon"></i><span>Желтые</span>
                         <p class="lamp"></p></div>
-                    <input type="number" class="yellow-card card-box yellowLite float-left" min="0" placeholder="...">
-                    <div class="red-card-title card-title-box float-left football-shadow"><i
+                    <input type="number" class="yellow-card input-box yellowLite float-left" min="0" placeholder="...">
+                    <div class="red-card-title box-title float-left football-shadow"><i
                                 class="card-icon red"></i><span>Красные</span>
                         <p class="lamp"></p></div>
-                    <input type="number" class="red-card card-box redLite float-left" min="0" placeholder="...">
-                    <div class="corner-title float-left football-shadow"><i class="corner-icon"><i
+                    <input type="number" class="red-card input-box redLite float-left" min="0" placeholder="...">
+                    <div class="corner-title float-left box-title football-shadow"><i class="corner-icon"><i
                                     class="circle-corner"></i></i><span>Угловые</span>
                         <p class="lamp"></div>
-                    <input type="number" class="corner card-box float-left" min="0" placeholder="...">
-                </div>
-                <div class="shot-wrap forecast-football info-box forecast-box">
-                    <div class="shot-preview float-left football-shadow">Удары</div>
-                    <div class="all-shot-title shot-title float-left football-shadow">
-                        <i class="all-shot-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
-                        <span>Всего</span>
-                        <p class="lamp"></p>
-                    </div>
-                    <input type="number" class="all-shot shot-box float-left" placeholder="...">
-                    <div class="in-gate-title shot-title float-left football-shadow">
-                        <i class="in-gate-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
-                        <span>В створ</span>
-                        <p class="lamp"></p>
-                    </div>
-                    <input type="number" class="in-gate-shot shot-box float-left" placeholder="...">
-                    <div class="free-kick-title shot-title float-left football-shadow">
-                        <i class="free-kick-icon"><i class="whistle-circle"></i><i class="whistle-line"></i><i
-                                    class="fa fa-futbol-o" aria-hidden="true"></i></i>
-                        <span>Штрафные</span>
-                        <p class="lamp"></p>
-                    </div>
-                    <input type="number" class="free-kick shot-box float-left" placeholder="...">
-                    <div class="crossbar-title shot-title float-left football-shadow">
-                        <i class="crossbar-icon"><i class="gate "></i><i class="fa fa-futbol-o greenlite" aria-hidden="true"></i></i>
-                        <span>Штанга</span>
-                        <p class="lamp"></p>
-                    </div>
-                    <input type="number" class="crossbar shot-box float-left" placeholder="...">
+                    <input type="number" class="corner input-box float-left" min="0" placeholder="...">
                 </div>
                 <div class="penalty-wrap forecast-football info-box forecast-box">
-                    <div class="penalty-title shot-preview float-left football-shadow">
+                    <div class="penalty-title box-title title-left float-left football-shadow">
                         <i class="penalty-icon"><i class="field greenlite"><i class="fa fa-futbol-o" aria-hidden="true"></i></i><i class="semicircle"></i></i>
                         <span>Пенальти</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="penalty shot-box float-left" placeholder="...">
-                    <div class="extra-time-title shot-preview float-left football-shadow">
+                    <input type="number" class="penalty input-box float-left" placeholder="...">
+                    <div class="extra-time-title box-title float-left football-shadow">
                         <i class="extra-time-icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-clock-o" aria-hidden="true"></i></i>
                         <span>Дополнительное время</span>
                         <p class="lamp"></p>
@@ -155,29 +131,42 @@
                     </div>
                     <div class="series-penalty float-left">не будет</div>
                 </div>
+                <div class="shot-wrap forecast-football info-box forecast-box">
+                    <div class="shot-preview box-title title-left float-left football-shadow">Удары</div>
+                    <div class="all-shot-title box-title float-left football-shadow">
+                        <i class="all-shot-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
+                        <span>Всего</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="all-shot input-box float-left" placeholder="...">
+                    <div class="in-gate-title box-title float-left football-shadow">
+                        <i class="in-gate-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
+                        <span>В створ</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="in-gate-shot input-box float-left" placeholder="...">
+                    <div class="free-kick-title box-title float-left football-shadow">
+                        <i class="free-kick-icon"><i class="whistle-circle"></i><i class="whistle-line"></i><i
+                                    class="fa fa-futbol-o" aria-hidden="true"></i></i>
+                        <span>Штрафные</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="free-kick input-box float-left" placeholder="...">
+                    <div class="crossbar-title box-title float-left football-shadow">
+                        <i class="crossbar-icon"><i class="gate"></i><i class="fa fa-futbol-o greenlite" aria-hidden="true"></i></i>
+                        <span>Штанга</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="crossbar input-box float-left" placeholder="...">
+                </div>
+
             </div>
         </div>
     </div>
-    <i class="in-gate-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
-    <i class="all-shot-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
-    <i class="free-kick-icon"><i class="whistle-circle"></i><i class="whistle-line"></i><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
-    <i class="crossbar-icon"><i class="gate"></i><i class="fa fa-futbol-o greenlite" aria-hidden="true"></i></i>
-    <i class="penalty-icon"><i class="field greenlite"><i class="fa fa-futbol-o" aria-hidden="true"></i></i><i class="semicircle"></i></i>
-    <i class="series-penalty-icon">
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-    </i>
+
     <i class="extra-time-icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-clock-o" aria-hidden="true"></i></i>
 
-    <div class="subscribe-checkbox">
-        <div class="checkbox-imitate">
-            <div class="imitate-check"></div>
-        </div>
 
-    </div>
 
 
     <div class="forecast_block forecast-hockey">

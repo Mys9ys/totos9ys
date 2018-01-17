@@ -37,6 +37,9 @@ button {
 .greenlite{
   background: @bgrndColorLiteFootball;
 }
+.title-left{
+  border-radius: 10px 0 0 10px;
+}
 
 .lamp{
   position: absolute;
@@ -168,17 +171,22 @@ button {
 }
 
 .box-title {
-  padding: 5px;
   background: @bgrndColorLiteFootball;
-  border-radius: 10px 0 0 10px;
-}
-
-.result-title {
   font-size: 16px;
   font-weight: bold;
   padding: 10px;
+  cursor: pointer;
 }
-
+.input-box{
+  margin: 5px;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid @bgrndColorFootball;
+  background: @bgrndColorLiteFootball;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
+}
 .result-box {
   font-size: 16px;
   padding: 5px;
@@ -200,59 +208,7 @@ button {
   border-left: 1px solid @bgrndColorLiteFootball;
   border-right: 1px solid @bgrndColorLiteFootball;
 }
-.goals-box {
-  font-size: 16px;
-  padding: 5px;
-  display: inline-block;
-}
 
-.goal-count {
-  padding: 5px 15px;
-  span {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 10px;
-    background: @bgrndColorLiteFootball;
-    box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
-    font-weight: bold;
-  }
-}
-
-.goals-margin-title {
-  background: @bgrndColorLiteFootball;
-  border-radius: 10px 0 0 10px;
-  font-weight: bold;
-  padding: 10px;
-
-  .margin-icon {
-    font-size: 18px;
-  }
-}
-
-.goals-sum-title {
-  background: @bgrndColorLiteFootball;
-  font-weight: bold;
-  padding: 10px;
-  .sum-icon {
-    font-size: 18px;
-  }
-}
-.goals-margin, .goals-sum{
-  margin: 5px;
-  width: 50px;
-  text-align: center;
-  padding: 5px;
-  border: 1px solid @bgrndColorFootball;
-  background: @bgrndColorLiteFootball;
-  border-radius: 10px;
-}
-.possession-title{
-  background: @bgrndColorLiteFootball;
-  border-radius: 10px 0 0 10px;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 16px;
-}
 .possession-team{
   margin: 5px;
   padding: 5px;
@@ -296,14 +252,12 @@ button {
   transition:.1s;
 }
 
-.card-title{
-  background: @bgrndColorLiteFootball;
-  border-radius: 10px 0 0 10px;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 16px;
+.margin-icon {
+  font-size: 12px;
 }
-
+.sum-icon {
+  font-size: 12px;
+}
 .card-icon{
   display: inline-block;
   width: 10px;
@@ -314,12 +268,7 @@ button {
 .red{
   background: red;
 }
-.card-title-box{
-  font-weight: bold;
-  padding: 10px;
-  font-size: 16px;
-  background: @bgrndColorLiteFootball;
-}
+
 .card-box{
   margin: 5px;
   width: 50px;
@@ -354,19 +303,7 @@ button {
     border-radius: 50%;
   }
 }
-.corner-title{
-  background: @bgrndColorLiteFootball;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 16px;
-}
-.shot-preview{
-  background: @bgrndColorLiteFootball;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 10px 0 0 10px;
-}
+
 .shot-title{
   background: @bgrndColorLiteFootball;
   font-weight: bold;
@@ -501,6 +438,14 @@ button {
     border-radius: 50%;
   }
 }
+.extra-time-icon{
+  font-size: 14px;
+  .fa-plus{
+    display: inline-block;
+    margin-right: 2px;
+    font-size: 8px;
+  }
+}
 .series-penalty-icon{
   .fa-futbol-o{
     display: inline-block;
@@ -524,25 +469,3 @@ button {
 }
 
 
-
-.checkbox-imitate {
-  position: relative;
-  display: inline-block;
-  margin-top: 10px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgb(130, 161, 21);
-  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
-  cursor: pointer;
-  .imitate-check {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-  }
-}
