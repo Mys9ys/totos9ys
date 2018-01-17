@@ -82,5 +82,13 @@ $(document).ready(function () {
         $('.possession-title').find('.lamp').addClass('lamp-confirm');
         console.log('forecast', forecast);
     });
+    $('.series-penalty, .extra-time').click(function () {
+        console.log('mi tyt');
+        if($(this).text() == 'не будет') {
+            $(this).text('будет');
+        } else {
+            $(this).text('не будет');
+        }
+    });
 });
 
