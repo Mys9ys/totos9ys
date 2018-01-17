@@ -19,6 +19,9 @@ button {
 .relative {
   position: relative;
 }
+.greenlite {
+  background: #d7e7a3;
+}
 .lamp {
   position: absolute;
   padding: 0;
@@ -328,6 +331,16 @@ button {
   background: #d7e7a3;
   border-radius: 10px;
 }
+.series-penalty,
+.extra-time {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background: #d7e7a3;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+  cursor: pointer;
+}
 .in-gate-icon {
   position: relative;
   display: inline-block;
@@ -387,6 +400,65 @@ button {
   font-size: 11px;
   bottom: 4px;
   left: 0px;
+}
+.crossbar-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  width: 25px;
+  height: 15px;
+  border-left: 2px solid #282828;
+  border-top: 2px solid #282828;
+  border-right: 2px solid #282828;
+  z-index: 0;
+}
+.crossbar-icon .fa-futbol-o {
+  position: absolute;
+  font-size: 9px;
+  bottom: 2px;
+  right: -5px;
+  z-index: 1;
+}
+.penalty-icon {
+  position: relative;
+}
+.penalty-icon .field {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  width: 28px;
+  height: 15px;
+  border-left: 1px solid #282828;
+  border-bottom: 1px solid #282828;
+  border-right: 1px solid #282828;
+  z-index: 1;
+}
+.penalty-icon .field .fa-futbol-o {
+  position: absolute;
+  font-size: 7px;
+  bottom: 3px;
+  left: 10px;
+  z-index: 1;
+}
+.penalty-icon .semicircle {
+  position: absolute;
+  left: 18px;
+  bottom: -2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #282828;
+  border-radius: 50%;
+}
+.series-penalty-icon .fa-futbol-o {
+  display: inline-block;
+  margin-right: 2px;
+  margin-top: 7px;
+  float: left;
+  font-size: 6px;
+  bottom: 3px;
+  left: 10px;
+  z-index: 1;
 }
 .forecast-hockey {
   background: rgba(30, 144, 255, 0.7);
