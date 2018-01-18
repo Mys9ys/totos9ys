@@ -82,6 +82,7 @@ $(document).ready(function () {
         $('.possession-title').find('.lamp').addClass('lamp-confirm');
         console.log('forecast', forecast);
     });
+
     $('.series-penalty, .extra-time').click(function () {
         $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
         if($(this).text() == 'не будет') {
@@ -94,6 +95,7 @@ $(document).ready(function () {
     $('.box-title').click(function () {
         $(this).parent().children().eq($(this).index()+1).focus();
     });
+    // зажигаем лампу после изменения значения input
     $('input[type=number]').on('change', function(){
         $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
     });
