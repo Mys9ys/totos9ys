@@ -147,14 +147,42 @@ button {
   border-radius: 10px;
   box-shadow: inset 0px 2px 8px 0px #9cc218;
 }
-.result-box {
-  font-size: 16px;
-  padding: 5px;
-}
-.result-box span {
+#result-box {
   display: inline-block;
-  padding: 5px;
+  margin-top: 2px;
+  margin-left: 10px;
+  -webkit-appearance: none;
   border-radius: 10px;
+  background: yellow;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
+  width: 120px;
+  height: 12px;
+  outline: none;
+  border: 1px solid #D4D4D4;
+}
+.result-box::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #d7e7a3;
+  box-shadow: 0px 2px 8px 0px #9cc218;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: .1s;
+}
+.result-box-title span {
+  padding: 0 11px;
+  display: inline-block;
+}
+.result-info {
+  display: inline-block;
+  position: absolute;
+  left: 350px;
+  top: 5px;
+  padding: 5px;
+  background: #d7e7a3;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px #9cc218;
   cursor: pointer;
 }
 .select-box {
@@ -398,6 +426,32 @@ button {
   margin-right: 2px;
   font-size: 8px;
 }
+.out-icon {
+  position: relative;
+}
+.out-icon .field {
+  display: inline-block;
+  width: 25px;
+  height: 16px;
+  background: #9cc218;
+}
+.out-icon .line {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  display: inline-block;
+  width: 25px;
+  height: 1px;
+  border-top: 1px solid #282828;
+}
+.out-icon .fa-futbol-o {
+  position: absolute;
+  border-radius: 50%;
+  font-size: 7px;
+  top: -6px;
+  left: 10px;
+  z-index: 1;
+}
 .series-penalty-icon .fa-futbol-o {
   display: inline-block;
   margin-right: 2px;
@@ -407,6 +461,62 @@ button {
   bottom: 3px;
   left: 10px;
   z-index: 1;
+}
+.offside-icon {
+  background: yellow;
+  color: #ff4e33;
+}
+.foot-random-wrap {
+  position: absolute;
+  top: -20px;
+  left: 830px;
+  border-radius: 0 10px 10px 10px;
+}
+.foot-random-wrap .random-title {
+  position: absolute;
+  left: -187px;
+  background: #d7e7a3;
+  z-index: 1;
+  padding: 10px;
+  padding-bottom: 30px;
+  border-radius: 10px 0 0 10px;
+}
+.foot-random-wrap .rand-block-title {
+  line-height: 1em;
+  text-align: center;
+}
+.foot-random-wrap .fa-random {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  background: #9cc218;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
+  cursor: pointer;
+  margin: 10px 20px;
+}
+.foot-random-wrap .fa-random:hover,
+.foot-random-wrap .random-active {
+  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
+}
+.foot-random-wrap .all-random {
+  margin-top: 10px;
+}
+.foot-random-wrap .score-random {
+  margin-top: 15px;
+}
+.foot-random-wrap .match-result-random {
+  margin-top: 25px;
+}
+.foot-random-wrap .goals-random,
+.foot-random-wrap .possession-random,
+.foot-random-wrap .cards-random,
+.foot-random-wrap .penalty-random,
+.foot-random-wrap .shots-random {
+  margin-top: 15px;
+}
+.foot-random-wrap .field-events-random {
+  margin-top: 10px;
 }
 .forecast-hockey {
   background: rgba(30, 144, 255, 0.7);

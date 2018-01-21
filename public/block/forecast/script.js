@@ -9,15 +9,24 @@ $(document).ready(function () {
     });
 
 
-
+    // Массив прогноза
     var forecast = {};
 
     // радиобаттон на исход матча
-    $('.result-box').click(function () {
-        $('.result-box').removeAttr('data-select').find('span').removeClass('select-box');
-        var $this = $(this);
-        $this.attr('data-select','1').find('span').addClass('select-box').parent().parent().find('.lamp').addClass('lamp-confirm');
+    $('.result-box').on('change',function () {
+        var result = $(this).val();
+        $('.result-box').parent().find('.lamp').addClass('lamp-confirm');
+        matchResult(result);
     });
+    function matchResult(result) {
+        if (result==0){
+            $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.home-team').find('.team-name').text());
+        }else if(result==2){
+            $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.visit-team').find('.team-name').text());
+        }else {
+            $('.result-box').parent().find('.result-info').find('span').text('Ничья в матче');
+        }
+    }
 
     // проставление исхода матча при операцией со счетом
     $('.goal-home, .goal-visit').on('change', function () {
@@ -30,13 +39,13 @@ $(document).ready(function () {
         forecast.margin = result;
         $('.goals-sum').val(home+visit).parent().find('.lamp').addClass('lamp-confirm');
         forecast.sum = home+visit;
-        $('.home_win').parent().find('.lamp').addClass('lamp-confirm');
+        $('.result-box').parent().find('.lamp').addClass('lamp-confirm');
         if (result>0){
-            $('.home_win').attr('data-select','1').find('span').addClass('select-box');
+            $('.result-box').val('0').parent().find('.result-info').find('span').text('Победит '+ $('.home-team').find('.team-name').text());
         }else if(result<0){
-            $('.visit_win').attr('data-select','1').find('span').addClass('select-box');
+            $('.result-box').val('2').parent().find('.result-info').find('span').text('Победит '+ $('.visit-team').find('.team-name').text());
         }else {
-            $('.nobody_win').attr('data-select','1').find('span').addClass('select-box');
+            $('.result-box').val('1').parent().find('.result-info').find('span').text('Ничья в матче');
         }
     });
     // разница мячей
@@ -98,6 +107,30 @@ $(document).ready(function () {
     // зажигаем лампу после изменения значения input
     $('input[type=number]').on('change', function(){
         $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
+    });
+    // Заполнение случайными числами блоков
+    // счет
+    $('.score-random').click(function () {
+        var home = forecast.home = Math.floor(Math.random()* (5 - 1)) + 1;
+        var visit = forecast.visit = Math.floor(Math.random()* (5 - 1)) + 1;
+        $('.goal-home').val(home).parent().find('.lamp').addClass('lamp-confirm');
+        $('.goal-visit').val(visit).parent().find('.lamp').addClass('lamp-confirm');
+    });
+    // Исход
+    $('.match-result-random').click(function () {
+        var result = forecast.forecast = Math.floor(Math.random()* (4 - 1));
+        $('.result-box').val(result).parent().find('.lamp').addClass('lamp-confirm');
+        matchResult(result);
+    });
+
+    // все
+    $('.all-random').click(function () {
+        $(this).parent().find('.fa-random').not(this).each(function () {
+            $(this).click();
+        });
+        console.log('forecast', forecast);
+        // $('.score-random').click();
+        // $('.match-result-random').click();
     });
 
 });

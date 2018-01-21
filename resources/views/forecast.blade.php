@@ -12,16 +12,18 @@
 
 @else
     <div class="forecast_block forecast-football">
-        <div class="container">
+        <div class="container ">
             <h2>Football</h2>
-            <div class="match-wrap">
+            <div class="match-wrap relative">
                 <div class="match-info football-shadow info-box">
-                    <div class="match-time float-left info-box"><i class="fa fa-clock-o" aria-hidden="true"></i><span>18:00</span>
+                    <div class="match-time float-left info-box">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i><span>18:00</span>
                     </div>
-                    <div class="match-date float-left info-box"><i class="fa fa-calendar" aria-hidden="true"></i><span>14.05.2018</span>
+                    <div class="match-date float-left info-box">
+                        <i class="fa fa-calendar" aria-hidden="true"></i><span>14.05.2018</span>
                     </div>
-                    <div class="match-variance float-left info-box"><i class="fa fa-calendar-check-o"
-                                                                       aria-hidden="true"></i><span>через 5 месяцев</span>
+                    <div class="match-variance float-left info-box">
+                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>через 5 месяцев</span>
                     </div>
                     <div class="clr"></div>
                 </div>
@@ -51,15 +53,14 @@
                         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                         <span>Результат матча</span><p
                                 class="lamp"></p></div>
-
-                    <div class="home_win result-box float-left">
-                        <span>Победит Россия</span>
+                    <input class="result-box" id="result-box" type="range" min="0" max="2" step="1">
+                    <div class="result-box-title">
+                        <span>П1</span>
+                        <span>Н</span>
+                        <span>П2</span>
                     </div>
-                    <div class="nobody_win result-box float-left">
-                        <span>ничья</span>
-                    </div>
-                    <div class="visit_win result-box float-left">
-                        <span>Победит Саудовская аравия</span>
+                    <div class="result-info">
+                        <span><i class="fa fa-arrow-left" aria-hidden="true"></i> Выберите исход матча</span>
                     </div>
                 </div>
                 <div class="goals-count-wrap forecast-football info-box forecast-box">
@@ -159,12 +160,39 @@
                     </div>
                     <input type="number" class="crossbar input-box float-left" placeholder="...">
                 </div>
+                <div class="field-event-wrap forecast-football info-box forecast-box">
+                    <div class="shot-preview box-title title-left float-left football-shadow">Прочее</div>
+                    <div class="out-title box-title float-left football-shadow">
+                        <i class="out-icon"><i class="field"></i><i class="line"></i><i class="fa fa-futbol-o greenlite" aria-hidden="true"></i></i>
+                        <span>Аут</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="out input-box float-left" placeholder="...">
+                    <div class="offside-title box-title float-left football-shadow">
+                        <i class="fa offside-icon fa-delicious" aria-hidden="true"></i>
+                        <span>Офсайд</span>
+                        <p class="lamp"></p>
+                    </div>
+                    <input type="number" class="offside input-box float-left" placeholder="...">
+                </div>
+                <div class="foot-random-wrap football-shadow">
+                    <div class="random-title football-shadow">Заполнить случайно. Все:
+                    </div>
+                    <i class="fa fa-random all-random" title="все результаты" aria-hidden="true"></i>
+                    <div class="rand-block-title">по блокам:</div>
 
+                    <i class="fa fa-random score-random" aria-hidden="true"></i>
+                    <i class="fa fa-random match-result-random" aria-hidden="true"></i>
+                    <i class="fa fa-random goals-random" aria-hidden="true"></i>
+                    <i class="fa fa-random possession-random" aria-hidden="true"></i>
+                    <i class="fa fa-random cards-random" aria-hidden="true"></i>
+                    <i class="fa fa-random penalty-random" aria-hidden="true"></i>
+                    <i class="fa fa-random shots-random" aria-hidden="true"></i>
+                    <i class="fa fa-random field-events-random" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
     </div>
-
-    <i class="extra-time-icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-clock-o" aria-hidden="true"></i></i>
 
 
 

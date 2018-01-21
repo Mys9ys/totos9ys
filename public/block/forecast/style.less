@@ -187,15 +187,49 @@ button {
   border-radius: 10px;
   box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
 }
-.result-box {
-  font-size: 16px;
-  padding: 5px;
-  span {
+
+#result-box {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 10px;
+  -webkit-appearance: none;
+  border-radius: 10px;
+  background: yellow;
+  box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
+  width: 120px;
+  height: 12px;
+  outline: none;
+  border: 1px solid #D4D4D4;
+}
+.result-box::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width:18px;
+  height:18px;
+  //background:@bgrndColorLiteFootball;
+  background: @bgrndColorLiteFootball;
+  box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
+  border-radius:18px;
+  cursor:pointer;
+  transition:.1s;
+}
+.result-box-title{
+  //display: inline-block;
+  span{
+    padding: 0 11px;
     display: inline-block;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
   }
+}
+.result-info{
+  display: inline-block;
+  position: absolute;
+  left: 350px;
+  top: 5px;
+
+  padding: 5px;
+  background: @bgrndColorLiteFootball;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
+  cursor: pointer;
 }
 
 .select-box {
@@ -446,6 +480,32 @@ button {
     font-size: 8px;
   }
 }
+.out-icon{
+  position: relative;
+  .field{
+    display: inline-block;
+    width: 25px;
+    height: 16px;
+    background: @bgrndColorFootball;
+  }
+  .line{
+    position: absolute;
+    left: 0px;
+    top:3px;
+    display: inline-block;
+    width: 25px;
+    height: 1px;
+    border-top: 1px solid rgb(40,40,40);
+  }
+  .fa-futbol-o{
+    position: absolute;
+    border-radius: 50%;
+    font-size: 7px;
+    top: -6px;
+    left: 10px;
+    z-index: 1;
+  }
+}
 .series-penalty-icon{
   .fa-futbol-o{
     display: inline-block;
@@ -456,6 +516,59 @@ button {
     bottom: 3px;
     left: 10px;
     z-index: 1;
+  }
+}
+.offside-icon{
+  background: yellow;
+  color: rgb(255, 78, 51);
+}
+.foot-random-wrap{
+  position: absolute;
+  top: -20px;
+  left: 830px;
+  border-radius:  0 10px 10px 10px;
+  .random-title{
+    position: absolute;
+    //top:15px;
+    left: -187px;
+    background: @bgrndColorLiteFootball;
+    z-index: 1;
+    padding: 10px;
+    padding-bottom: 30px;
+    border-radius: 10px 0 0 10px;
+  }
+  .rand-block-title{
+    line-height: 1em;
+    text-align: center;
+
+  }
+  .fa-random{
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    background: @bgrndColorFootball;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
+    cursor: pointer;
+    margin: 10px 20px;
+  }
+  .fa-random:hover, .random-active{
+    box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.3);
+  }
+  .all-random{
+    margin-top: 10px;
+  }
+  .score-random{
+    margin-top: 15px;
+  }
+  .match-result-random{
+    margin-top: 25px;
+  }
+  .goals-random, .possession-random, .cards-random, .penalty-random, .shots-random{
+    margin-top: 15px;
+  }
+  .field-events-random{
+    margin-top: 10px;
   }
 }
 
