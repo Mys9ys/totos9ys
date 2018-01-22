@@ -88,7 +88,7 @@
                     <div class="possession-block float-right">
                         <input type="number" class="countTeam1 count-possession float-left" placeholder="...">
                         <input type="range" class="float-left" id="possession" min="0" max="100" step="1" value="0"/>
-                        <div class="countTeam2 count-possession float-left"></div>
+                        <div class="countTeam2 count-possession float-left">100</div>
                     </div>
                 </div>
                 <div class="card-wrap forecast-football info-box forecast-box">
@@ -118,8 +118,8 @@
                         <span>Дополнительное время</span>
                         <p class="lamp"></p>
                     </div>
-                    <div class="extra-time float-left">не будет</div>
-                    <div class="series-penalty-title shot-title float-left football-shadow">
+                    <input type="range" id="extra-time" class="float-left range" data="extraTime" min="0" step="1" max="1" value="0">
+                    <div class="series-penalty-title box-title float-left football-shadow">
                         <i class="series-penalty-icon">
                             <i class="fa fa-futbol-o" aria-hidden="true"></i>
                             <i class="fa fa-futbol-o" aria-hidden="true"></i>
@@ -130,7 +130,8 @@
                         <span>Серия пенальти</span>
                         <p class="lamp"></p>
                     </div>
-                    <div class="series-penalty float-left">не будет</div>
+                    <input type="range" id="series-penalty" class="float-left range" data="penSeries" min="0" step="1" max="1" value="0">
+                    {{--<div class="series-penalty float-left">не будет</div>--}}
                 </div>
                 <div class="shot-wrap forecast-football info-box forecast-box">
                     <div class="shot-preview box-title title-left float-left football-shadow">Удары</div>
@@ -139,26 +140,26 @@
                         <span>Всего</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="all-shot input-box float-left" placeholder="...">
+                    <input type="number" class="all-shot input-box float-left" data="allShot" placeholder="...">
                     <div class="in-gate-title box-title float-left football-shadow">
                         <i class="in-gate-icon"><i class="fa fa-futbol-o" aria-hidden="true"></i></i>
                         <span>В створ</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="in-gate-shot input-box float-left" placeholder="...">
+                    <input type="number" class="in-gate-shot input-box float-left" data="inGateShot" placeholder="...">
                     <div class="free-kick-title box-title float-left football-shadow">
                         <i class="free-kick-icon"><i class="whistle-circle"></i><i class="whistle-line"></i><i
                                     class="fa fa-futbol-o" aria-hidden="true"></i></i>
                         <span>Штрафные</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="free-kick input-box float-left" placeholder="...">
+                    <input type="number" class="free-kick input-box float-left" data="freeKick" placeholder="...">
                     <div class="crossbar-title box-title float-left football-shadow">
                         <i class="crossbar-icon"><i class="gate"></i><i class="fa fa-futbol-o greenlite" aria-hidden="true"></i></i>
                         <span>Штанга</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="crossbar input-box float-left" placeholder="...">
+                    <input type="number" class="crossbar input-box float-left" data="crossbar" placeholder="...">
                 </div>
                 <div class="field-event-wrap forecast-football info-box forecast-box">
                     <div class="shot-preview box-title title-left float-left football-shadow">Прочее</div>
@@ -167,13 +168,13 @@
                         <span>Аут</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="out input-box float-left" placeholder="...">
+                    <input type="number" class="out input-box float-left" data="out" placeholder="...">
                     <div class="offside-title box-title float-left football-shadow">
                         <i class="fa offside-icon fa-delicious" aria-hidden="true"></i>
                         <span>Офсайд</span>
                         <p class="lamp"></p>
                     </div>
-                    <input type="number" class="offside input-box float-left" placeholder="...">
+                    <input type="number" class="offside input-box float-left" data="offside" placeholder="...">
                 </div>
                 <div class="foot-random-wrap football-shadow">
                     <div class="random-title football-shadow">Заполнить случайно. Все:

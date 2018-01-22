@@ -18,35 +18,19 @@ $(document).ready(function () {
         $('.result-box').parent().find('.lamp').addClass('lamp-confirm');
         matchResult(result);
     });
-    function matchResult(result) {
-        if (result==0){
-            $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.home-team').find('.team-name').text());
-        }else if(result==2){
-            $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.visit-team').find('.team-name').text());
-        }else {
-            $('.result-box').parent().find('.result-info').find('span').text('Ничья в матче');
-        }
-    }
+
 
     // проставление исхода матча при операцией со счетом
     $('.goal-home, .goal-visit').on('change', function () {
-        $('.result-box').removeAttr('data-select').find('span').removeClass('select-box');
         $('.goal-home, .goal-visit').parent().find('.lamp').addClass('lamp-confirm');
         var home = forecast.home = Number($('.goal-home').val());
         var visit = forecast.visit = Number($('.goal-visit').val());
-        var result = home-visit;
+        var result = forecast.margin =home-visit;
+        var sum = forecast.sum = home+visit;
         $('.goals-margin').val(result);
-        forecast.margin = result;
-        $('.goals-sum').val(home+visit).parent().find('.lamp').addClass('lamp-confirm');
-        forecast.sum = home+visit;
+        $('.goals-sum').val(sum).parent().find('.lamp').addClass('lamp-confirm');
         $('.result-box').parent().find('.lamp').addClass('lamp-confirm');
-        if (result>0){
-            $('.result-box').val('0').parent().find('.result-info').find('span').text('Победит '+ $('.home-team').find('.team-name').text());
-        }else if(result<0){
-            $('.result-box').val('2').parent().find('.result-info').find('span').text('Победит '+ $('.visit-team').find('.team-name').text());
-        }else {
-            $('.result-box').val('1').parent().find('.result-info').find('span').text('Ничья в матче');
-        }
+        matchResult(result);
     });
     // разница мячей
     $('.goals-margin').on('change', function () {
@@ -64,22 +48,8 @@ $(document).ready(function () {
     $('#possession').on("change", function() {
         var value = forecast.possession = Number(this.value);
         // обработчик прокрутки бегунка
-        $('#possession').css({'background':'-webkit-linear-gradient(left ,#8870FF 0%,#8870FF '+value+'%,yellow '+value+'%, yellow 100%)'});
-
-        $('.countTeam1').val(value);
-        $('.countTeam2').text(100 - value);
-        if (value>50) {
-            $('.possession-team').text($('.home-team').find('.team-name').text());
-            $('.possession-title').find('.lamp').addClass('lamp-confirm');
-        } else if (value<50 && value>0){
-            $('.possession-team').text($('.visit-team').find('.team-name').text());
-            $('.possession-title').find('.lamp').addClass('lamp-confirm');
-        } else  if (value == 50){
-            $('.possession-team').text('ничья');
-            $('.possession-title').find('.lamp').addClass('lamp-confirm');
-        }
-
-    }).trigger("change");
+        possetionResult(value);
+    });
 
     // изменение бегунка в случае набора процентов в ручную
     $('.countTeam1').on('change', function () {
@@ -87,18 +57,20 @@ $(document).ready(function () {
         forecast.possession = Number(this.value);
         $('#possession').css({'background':'-webkit-linear-gradient(left ,#8870FF 0%,#8870FF '+value+'%,yellow '+value+'%, yellow 100%)'});
         $('#possession').val(value);
-        $('.countTeam2').text(100 - value);
+        possetionResult(value);
         $('.possession-title').find('.lamp').addClass('lamp-confirm');
         console.log('forecast', forecast);
     });
 
-    $('.series-penalty, .extra-time').click(function () {
-        $(this).parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
-        if($(this).text() == 'не будет') {
-            $(this).text('будет');
-        } else {
-            $(this).text('не будет');
-        }
+    //oбработчик пенальти
+    $('.range').on('change',function () {
+        var $this = $(this);
+        var value = forecast[$this.attr('data')] = Number($this.val());
+        $this.parent().children().eq($(this).index()-1).find('.lamp').addClass('lamp-confirm');
+        $this.css({'background':'-webkit-linear-gradient(left ,#8870FF 0%,#8870FF '+value*100+'%,rgb(255, 78, 51) '+value*100+'%, rgb(255, 78, 51) 100%)'});
+
+        console.log(forecast);
+
     });
     // перевод фокуса на input
     $('.box-title').click(function () {
@@ -111,8 +83,8 @@ $(document).ready(function () {
     // Заполнение случайными числами блоков
     // счет
     $('.score-random').click(function () {
-        var home = forecast.home = Math.floor(Math.random()* (5 - 1)) + 1;
-        var visit = forecast.visit = Math.floor(Math.random()* (5 - 1)) + 1;
+        var home = forecast.home = Math.floor(Math.random()* (5));
+        var visit = forecast.visit = Math.floor(Math.random()* (5));
         $('.goal-home').val(home).parent().find('.lamp').addClass('lamp-confirm');
         $('.goal-visit').val(visit).parent().find('.lamp').addClass('lamp-confirm');
     });
@@ -122,6 +94,50 @@ $(document).ready(function () {
         $('.result-box').val(result).parent().find('.lamp').addClass('lamp-confirm');
         matchResult(result);
     });
+    // голы
+    $('.goals-random').click(function () {
+        var margin = forecast.margin = Math.floor(Math.random()* (5 + 5) -5);
+        var sum = forecast.sum = Math.floor(Math.random()* (12));
+        $('.goals-margin').val(margin).parent().find('.lamp').addClass('lamp-confirm');
+        $('.goals-sum').val(sum).parent().find('.lamp').addClass('lamp-confirm');
+    });
+    // владение
+    $('.possession-random').click(function () {
+        var possession = forecast.possession = Math.floor(Math.random()* (60)+20);
+        $('#possession').val(possession).parent().find('.lamp').addClass('lamp-confirm');
+        possetionResult(possession);
+    });
+    // карточки
+    $('.cards-random').click(function () {
+        var yellow = forecast.yellow = Math.floor(Math.random()* (7));
+        var red = forecast.red = Math.floor(Math.random()* (2));
+        var corner = forecast.corner = Math.floor(Math.random()* (16));
+        $('.yellow-card').val(yellow).parent().find('.lamp').addClass('lamp-confirm');
+        $('.red-card').val(red).parent().find('.lamp').addClass('lamp-confirm');
+        $('.corner').val(corner).parent().find('.lamp').addClass('lamp-confirm');
+    });
+    // пенальти
+    $('.penalty-random').click(function () {
+        var penalty = forecast.penalty = random(2, 0);
+        $('.penalty').val(penalty);
+        $('.penalty-title').find('.lamp').addClass('lamp-confirm');
+        console.log('forecast', forecast);
+    });
+    // удары
+    $('.shots-random').click(function () {
+        $('.shot-wrap').find('input').each(function () {
+            $(this).val(forecast[$(this).attr('data')]=random(20, 2)).parent().find('.lamp').addClass('lamp-confirm');
+        });
+        console.log('forecast', forecast);
+    });
+    // прочее
+    $('.field-events-random').click(function () {
+        $('.field-event-wrap').find('input').each(function () {
+            $(this).val(forecast[$(this).attr('data')]=random(20, 2)).parent().find('.lamp').addClass('lamp-confirm');
+        });
+        console.log('forecast', forecast);
+    });
+
 
     // все
     $('.all-random').click(function () {
@@ -134,4 +150,33 @@ $(document).ready(function () {
     });
 
 });
+function random(max, min){
+    return Math.floor(Math.random()* (max - min) + min);
+}
+
+function matchResult(result) {
+    if (result==0){
+        $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.home-team').find('.team-name').text());
+    }else if(result==2){
+        $('.result-box').parent().find('.result-info').find('span').text('Победит '+ $('.visit-team').find('.team-name').text());
+    }else {
+        $('.result-box').parent().find('.result-info').find('span').text('Ничья в матче');
+    }
+}
+
+function possetionResult(value) {
+    $('#possession').css({'background':'-webkit-linear-gradient(left ,#8870FF 0%,#8870FF '+value+'%,yellow '+value+'%, yellow 100%)'});
+    $('.countTeam1').val(value);
+    $('.countTeam2').text(100 - value);
+    if (value>50) {
+        $('.possession-team').text($('.home-team').find('.team-name').text());
+        $('.possession-title').find('.lamp').addClass('lamp-confirm');
+    } else if (value<50 && value>0){
+        $('.possession-team').text($('.visit-team').find('.team-name').text());
+        $('.possession-title').find('.lamp').addClass('lamp-confirm');
+    } else  if (value == 50){
+        $('.possession-team').text('ничья');
+        $('.possession-title').find('.lamp').addClass('lamp-confirm');
+    }
+}
 
