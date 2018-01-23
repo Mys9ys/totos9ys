@@ -62,6 +62,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="#" class="messages">
+                                    Сообщения
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('profile') }}">
                                     Настройки
                                 </a>

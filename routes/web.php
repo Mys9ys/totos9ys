@@ -51,3 +51,5 @@ Route::post('/perlLikes', 'ajax\humorLoad@likes');
 Route::post('/addPerl', 'ajax\humorLoad@adds');
 // Добавляем картинку - аватар для турнира
 Route::post('/addAvatar', 'ajax\events@adds');
+// проверка новых сообщений
+Route::post('/newMessage', 'ajax\messageProcessing@loadNew');

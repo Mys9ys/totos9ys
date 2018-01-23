@@ -48,7 +48,33 @@
         // подсказки на ачивках
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
-        })
+        });
+
+
+
+
+        setInterval(function(){
+            loadNewMessage();
+        }, 1000); // 1000 м.сек
 
     });
+    function loadNewMessage(){
+        $.ajaxSetup({
+            cache: false,
+            ifModified: true
+        });
+
+        var data = { 'id': $('.user_info').data('user')}
+        $.post(
+            '/newMessage',
+            data,
+            function (result) {
+                if(result) {
+                    $('.messages').find('.badge').remove();
+                    $('.messages').append('<span class="badge">'+result+'</span>');
+                }
+                console.log('result', result);
+            } , 'json'
+        );
+    }
 </script>
