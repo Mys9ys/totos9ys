@@ -11,8 +11,8 @@
     <div class="events_admin_block">
         <div class="container">
             <h4>Блок администрирования турниров</h4>
-            <div class="add_events">Добавить турнир</div>
-            <div class="add_event">
+            <div class="event-btn add_event">Добавить турнир</div>
+            <div class="add_event_box">
                 <div class="form-wrap">
                     <input type="text" data="name" placeholder="Введите" class="event-info">
                     <span class="event-title">Название турнира</span>
@@ -47,6 +47,15 @@
                     <input type="number" placeholder="Введите" data="teams" class="event-info">
                     <span class="event-title">Количество команд</span>
                 </div>
+                <div class="form-wrap">
+                    <input type="number" placeholder="Введите" data="group" class="event-info">
+                    <span class="event-title">Количество групп</span>
+                </div>
+                <div class="form-wrap">
+                    <textarea type="number" placeholder="Введите описание" data="description" class="event-info"></textarea>
+                    <span class="event-title end-title">Описание</span>
+                </div>
+                <button class="event-btn confirm-event">Добавить</button>
             </div>
         </div>
     </div>

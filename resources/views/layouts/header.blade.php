@@ -62,7 +62,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="messages">
+                                <a href="{{ route('message') }}" class="messages">
                                     Сообщения
                                 </a>
                             </li>

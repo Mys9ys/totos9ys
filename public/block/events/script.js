@@ -8,38 +8,59 @@ $(document).ready(function () {
             processData: false, // важно - убираем преобразование строк по умолчанию
         }
     });
+    // моедлирование нажатия input-file
     $('.btn-avatar').click(function () {
           $('#avatar').click();
     });
-    $('.add_events').click(function () {
+    $('.confirm-event').click(function () {
         var data = {};
         $('.add_event').find('.event-info').each(function () {
             var $this = $(this);
             if ($this.attr('data')) {
                 data[$this.attr('data')] = $this.val();
-                if($this.attr('data')=='avatar'){
-                    console.log('nawli kartinky', avatar);
-                    data['avatar']= avatar;
-                }
             }
         });
-        // var start = $('#start_event').val();
-        // var end = $('#end_event').val();
-        // console.log('start',start);
-        // console.log('end',end);
-        console.log('data', data);
-        console.log('avatar', avatar);
-        $.ajax({
-            url : '/addAvatar',
-            // url : '/addAvatar',
-            type : "POST",
-            contentType: false, // важно - убираем форматирование данных по умолчанию
-            processData: false, // важно - убираем преобразование строк по умолчанию
-            data : 'vxjv',
-            success:function(result){
-                console.log(result);
-            }
-        });
+        $.post(
+            '/addEvent',
+            data,
+            function (result) {
+                console.log('addEvent', result);
+            } , 'json'
+        );
+    });
+
+    $('.add_event').click(function () {
+        $('.add_event_box').toggle();
+    });
+
+        // var data = {};
+        // $('.add_event').find('.event-info').each(function () {
+        //     var $this = $(this);
+        //     if ($this.attr('data')) {
+        //         data[$this.attr('data')] = $this.val();
+        //         // if($this.attr('data')=='avatar'){
+        //         //     console.log('nawli kartinky', avatar);
+        //         //     data['avatar']= avatar;
+        //         // }
+        //     }
+        // });
+        // // var start = $('#start_event').val();
+        // // var end = $('#end_event').val();
+        // // console.log('start',start);
+        // // console.log('end',end);
+        // console.log('data', data);
+        // console.log('avatar', avatar);
+        // $.ajax({
+        //     url : '/addAvatar',
+        //     // url : '/addAvatar',
+        //     type : "POST",
+        //     contentType: false, // важно - убираем форматирование данных по умолчанию
+        //     processData: false, // важно - убираем преобразование строк по умолчанию
+        //     data : 'vxjv',
+        //     success:function(result){
+        //         console.log(result);
+        //     }
+        // });
         // $.post(
         //         '/addAvatar',
         //         data,
@@ -61,7 +82,7 @@ $(document).ready(function () {
         // var data ={};
         // data.img = input.files[0];
         // console.log('input.files', $("#avatar").files);
-    });
+
     function readURL(input) {
 
         if (input.files && input.files[0]) {

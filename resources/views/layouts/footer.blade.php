@@ -54,7 +54,7 @@
 
 
         setInterval(function(){
-            loadNewMessage();
+//            loadNewMessage();
         }, 1000); // 1000 м.сек
 
     });

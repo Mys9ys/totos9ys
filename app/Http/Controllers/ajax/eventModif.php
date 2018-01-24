@@ -4,8 +4,9 @@ namespace App\Http\Controllers\ajax;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Events;
 
-class events extends Controller
+class eventModif extends Controller
 {
     public function adds(Request $request){
 //        $this->validate($request, [
@@ -23,6 +24,26 @@ class events extends Controller
 
 //        return json_encode($request->name);
         return json_encode($request);
+    }
+
+    public function addEvent(Request $request){
+        $this->validate($request, [
+            'name' => 'required|string',
+            'short_name' => 'required|string',
+            'sport' => 'required',
+            'start_event' => 'required',
+            'end_event' => 'required',
+            'teams' => 'required',
+            'group' => 'required',
+            'description' => 'required',
+//         'avatar' => 'file'
+        ]);
+        $event = new Events();
+        foreach ($request->all() as $key=>$value){
+            $event->$key=$value;
+        }
+        $event->save();
+        return json_encode($event);
     }
 }
 

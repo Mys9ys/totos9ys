@@ -32,6 +32,7 @@ Route::post('/forecastconfirm', 'ForecastController@execute')->name('forecastcon
 Route::get('/complited', 'ComplitedController@execute')->name('complited');
 Route::get('/ratings', 'RatingsController@execute')->name('ratings');
 Route::get('/profile', 'ProfileController@execute')->name('profile');
+Route::get('/message', 'MessageController@execute')->name('message');
 
 
 
@@ -50,6 +51,8 @@ Route::post('/perlLikes', 'ajax\humorLoad@likes');
 // Добавляем шутку
 Route::post('/addPerl', 'ajax\humorLoad@adds');
 // Добавляем картинку - аватар для турнира
-Route::post('/addAvatar', 'ajax\events@adds');
+Route::post('/addAvatar', 'ajax\eventModif@adds');
+// Добавляем турнир
+Route::post('/addEvent', 'ajax\eventModif@addEvent');
 // проверка новых сообщений
 Route::post('/newMessage', 'ajax\messageProcessing@loadNew');
