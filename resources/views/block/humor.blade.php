@@ -3,3 +3,4 @@
 <div class="humor_block"></div>
 
 <script src="{{ asset('public/block/humor/script.js') }}"></script>
+

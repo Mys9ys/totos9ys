@@ -8,10 +8,11 @@ $(document).ready(function(){
     $.post(
         '/humorLoad',
         function (result) {
-            var arResult = result.arHumor;
-            getRandPerl(arResult);
+            var arHumor = result.arHumor;
+            var arUser = result.arUser;
+            getRandPerl(arHumor, arUser);
             $('.humor_block').on('click', '.next_perl', function () {
-                getRandPerl(arResult);
+                getRandPerl(arHumor,arUser);
             });
         } , 'json'
     );
@@ -83,19 +84,27 @@ $(document).ready(function(){
 });
 
 // функция обработки массива шуток и вывода
-function getRandPerl(arResult) {
+function getRandPerl(arResult, arUsers) {
     $('.humor_block').children().remove();
+
+        console.log('arResult', arResult);
 
     // выбор случайного перла
     var res = Math.floor(Math.random()*arResult.length);
-
+    var arUser = arUsers[arResult[res]['user']-1];
+        console.log('arUser.name',arUser.nik);
     // проверка на установку лайка
     var name = 'perlID'+ arResult[res]['id'];
     var likesPerl = 'fa-thumbs-o-up';
     if ($.cookie(name) != null) {
         var likesPerl = 'fa-thumbs-up';
     }
-
+    var added = '<div>' +
+        '<div class="added-left-box">'+
+         '<div class="added-name">'+arUser.nik+'</div>'+
+         '<div class="added-time"></div>'+
+        '</div>'+
+        '<div class="added-avatar">'+arUser.avatar+'</div></div>';
     var content = '<p>'+arResult[res]['text']+'</p>';
     content = '<div class="perl_box" data-id="'+arResult[res]['id']+'">' +
         '<div class="perl_stat"><div class="perl_likes_count"><i class="fa fa-thumbs-up" aria-hidden="true"></i>  '+arResult[res]['likes']+'</div>' +
@@ -104,6 +113,7 @@ function getRandPerl(arResult) {
         '<div class="likes_perl">нравится  <i class="fa '+likesPerl+'" aria-hidden="true"></i></div>' +
         '<div class="next_perl">следующий перл  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></div>' +
         '<div class="add_perl">добавить  <i class="fa fa-plus-circle" aria-hidden="true"></i></div>' +
+        added +
         '</div>';
     $('.humor_block').append(content);
     var data = {

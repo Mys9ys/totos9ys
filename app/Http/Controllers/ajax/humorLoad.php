@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ajax;
 
 use App\Humor;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 date_default_timezone_set('Europe/Moscow');
@@ -12,8 +13,10 @@ class humorLoad extends Controller
     public function load()
     {
         $arHumor = Humor::all();
+        $arUser = User::select('nik', 'avatar')->get();
         return json_encode(array(
             'arHumor' => $arHumor,
+            'arUser' => $arUser,
         ));
     }
 
