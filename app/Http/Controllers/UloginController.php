@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Matches;
+use App\Message;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Hash;
 use Redirect;
+use App\AchivUser;
 
 class UloginController extends Controller
 {
@@ -63,6 +66,19 @@ class UloginController extends Controller
             Auth::loginUsingId($newUser->id, TRUE);
 
             \Session::flash('flash_message', trans('interface.ActivatedSuccess'));
+
+            // первая ачивка
+            $achiv = AchivUser::create([
+                'user' => $newUser->id,
+                'achiev' => '19',
+                'count' => '1',
+            ]);
+            // сообщение об успешной регистрации
+            $mes = Message::create([
+                'seter' => '1',
+                'geter' => $newUser->id,
+                'content' => 'Прветствуем Вас на нашем сайте'
+            ]);
 
             return Redirect::back();
         }

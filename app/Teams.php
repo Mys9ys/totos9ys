@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Teams extends Model
 {
     //
-    protected $table = 'team_cup17';
+    protected $table = 'teams';
 }

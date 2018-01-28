@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\ajax;
 
+use App\Countries;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Events;
+use Illuminate\Support\Facades\Auth;
 
 class eventModif extends Controller
 {
@@ -36,14 +38,36 @@ class eventModif extends Controller
             'teams' => 'required',
             'group' => 'required',
             'description' => 'required',
+            'count_match' => 'required',
 //         'avatar' => 'file'
         ]);
         $event = new Events();
         foreach ($request->all() as $key=>$value){
             $event->$key=$value;
         }
+        $event->user_added=Auth::user()->id;
         $event->save();
-        return json_encode($event);
+        return json_encode('Событие добавлено');
+    }
+
+    public function addCountry(Request $request){
+        $res = Countries::where('flag', '=', $request->flag)->first();
+
+        if($res != null){
+            return json_encode('Такая страна уже есть');
+        } else {
+            $country = Countries::create([
+                'name' => $request->name,
+                'flag' => $request->flag,
+                'user_added' => Auth::user()->id,
+            ]);
+            return json_encode('Страна успешно добавлена');
+        }
+    }
+    public function getEvents(Request $request){
+
+        $res = Events::find($request->id);
+        return json_encode($res);
     }
 }
 

@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Countries extends Model
 {
-    protected $table = 'messages';
+    protected $table = 'countries';
 
     protected $fillable = [
-        'seter', 'geter', 'content'
+        'name', 'flag'
     ];
 }

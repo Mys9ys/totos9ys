@@ -97,3 +97,73 @@ button {
 .btn-avatar:hover{
 
 }
+.flag-box{
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+.flag-wrap{
+  width: 600px;
+  position: relative;
+}
+.country-flag{
+  width: 100px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.add_coutry_box{
+  display: none;
+}
+.confirm_massage{
+  p{
+    display: inline-block;
+    padding: 5px;
+  }
+}
+.tournament-box{
+  display: none;
+}
+.group-box{
+  .group-title{
+    display: inline-block;
+    box-shadow: inset 0px 2px 8px 0px rgba(40,40,40, .4);
+    border-radius: 10px 10px 0 0;
+    padding: 5px 10px;
+    margin-left: 10px;
+  }
+  .teams{
+    width: 100%;
+    display: inline-block;
+    .teams-name{
+      float: left;
+      display: inline-block;
+      width: 300px;
+      padding: 5px;
+      border-radius: 10px  0 0 10px;
+      box-shadow: inset 0px 2px 8px 0px rgba(40,40,40, .4);
+    }
+    .teams-flag{
+      float: left;
+      img{
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .add-to-bd{
+      float: left;
+      display: inline-block;
+      padding: 4px 15px;
+      border-radius: 10px;
+      border: 1px solid @adminBgrndColor;
+      box-shadow: 0px 2px 8px 0px rgba(40,40,40, .4);
+      background: @adminBgrndColor;
+      color: @btntxt;
+      cursor: pointer;
+    }
+    .clr{
+      clear: both;
+    }
+  }
+}

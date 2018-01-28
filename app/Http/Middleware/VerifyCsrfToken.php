@@ -13,6 +13,7 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         'ulogin',
+        'events',
         '/humorLoad',
         '/perlViews',
         '/perlLikes',
@@ -20,6 +21,8 @@ class VerifyCsrfToken extends BaseVerifier
         '/addAvatar',
         '/addEvent',
         '/newMessage',
+        '/addCountry',
+        '/getEvents',
         //
     ];
 }

@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class AchivUser extends Model
 {
-    protected $table = 'messages';
+    protected $table = 'achiev_user';
 
     protected $fillable = [
-        'seter', 'geter', 'content'
+        'user', 'achiev', 'count'
     ];
 }

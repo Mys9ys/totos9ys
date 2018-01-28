@@ -13,7 +13,7 @@ class humorLoad extends Controller
     public function load()
     {
         $arHumor = Humor::all();
-        $arUser = User::select('nik', 'avatar')->get();
+        $arUser = User::select('nik', 'avatar', 'created_at')->get();
         return json_encode(array(
             'arHumor' => $arHumor,
             'arUser' => $arUser,

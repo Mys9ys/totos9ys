@@ -56,3 +56,7 @@ Route::post('/addAvatar', 'ajax\eventModif@adds');
 Route::post('/addEvent', 'ajax\eventModif@addEvent');
 // проверка новых сообщений
 Route::post('/newMessage', 'ajax\messageProcessing@loadNew');
+// добавление новой страны
+Route::post('/addCountry', 'ajax\eventModif@addCountry');
+// получение информации о турнире
+Route::post('/getEvents', 'ajax\eventModif@getEvents');
