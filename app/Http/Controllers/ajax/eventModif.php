@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ajax;
 
 use App\Countries;
+use App\Teams;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Events;
@@ -68,6 +69,26 @@ class eventModif extends Controller
 
         $res = Events::find($request->id);
         return json_encode($res);
+    }
+
+    public function getCountries(){
+        return json_encode(Countries::all());
+    }
+    public function addTeams(Request $request){
+        $this->validate($request, [
+            'country' => 'required',
+        ]);
+        $res = new Teams();
+        foreach ($request->all() as $key=>$value){
+            $res->$key=$value;
+        }
+        $res->user_added=Auth::user()->id;
+        if ($res->save()) {
+            return json_encode(true);
+        } else {
+            return json_encode(false);
+        }
+
     }
 }
 

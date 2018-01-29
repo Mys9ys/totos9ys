@@ -23,6 +23,8 @@ class VerifyCsrfToken extends BaseVerifier
         '/newMessage',
         '/addCountry',
         '/getEvents',
+        '/getCountries',
+        '/addTeams',
         //
     ];
 }

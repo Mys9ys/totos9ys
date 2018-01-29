@@ -122,8 +122,55 @@ $(document).ready(function () {
         );
     });
 
-    var arGroup = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-    console.log('arGroup', arGroup[0]);
+    // горячая подгрузка команд в select
+    $('.tournament-box').on('focus','.teams-name',function () {
+        $.post(
+            '/getCountries',
+            function (result) {
+                $('.country-load').children().remove();
+                var content = '<option >Выбрать</option>';
+                $.each(result, function (index, value) {
+                    content = content + '<option value="'+value["id"]+'" data="'+value["flag"]+'">'+value["name"]+'</option>';
+                });
+                $('.country-load').append(content);
+            }, 'json'
+        );
+        // console.log('mi tyt focus');
+    });
+    // добавляем флажок
+    $('.tournament-box').on('change','.teams-name',function () {
+        $(this).parent().find('.teams-flag').children().remove();
+        $(this).parent().find('.teams-flag').append('<img class="country-flag" alt="" src="/public/image/flags/' + $(this).find('option:selected').attr('data') + '.ico">');
+        $(this).parent().find('.teams-flag').attr('data-flag', $(this).find('option:selected').attr('data'));
+        $(this).parent().find('.teams-name').removeClass('country-load');
+    });
+    // добавляем команду в турнир
+    $('.tournament-box').on('click','.add-team-tornament',function () {
+        var data = {
+            country: $(this).parent().find('.teams-name').val(),
+            name: $(this).parent().find('option:selected').text(),
+            rating: $(this).parent().find('.team-rating').val(),
+            group: $(this).parent().data('group')+1,
+            flag: $(this).parent().find('.teams-flag').data('flag'),
+            tournament: $(this).parent().parent().data('tournament'),
+            sport: $(this).parent().parent().data('sport'),
+        };
+        console.log('data',data);
+        var $this = $(this);
+        $.post(
+            '/addTeams',
+            data,
+            function (result) {
+                if(result == true) {
+                    $this.parent().find('.add_team_confirm').append('<i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>');
+                }
+            }, 'json'
+        );
+
+
+    });
+
+
 });
 function cyrill_to_latin(text) {
     var arrru = new Array('Я', 'я', 'Ю', 'ю', 'Ч', 'ч', 'Ш', 'ш', 'Щ', 'щ', 'Ж', 'ж', 'А', 'а', 'Б', 'б', 'В', 'в', 'Г', 'г', 'Д', 'д', 'Е', 'е', 'Ё', 'ё', 'З', 'з', 'И', 'и', 'Й', 'й', 'К', 'к', 'Л', 'л', 'М', 'м', 'Н', 'н', 'О', 'о', 'П', 'п', 'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ы', 'ы', 'Ь', 'ь', 'Ъ', 'ъ', 'Э', 'э');
@@ -137,32 +184,40 @@ function cyrill_to_latin(text) {
     return text;
 }
 function tournamentFill(tournament) {
-    $('.tournament-box').children().remove();
+    $('.tournament-box').attr({'data-tournament': tournament['id'], 'data-sport': tournament['sport']}).children().remove();
 
-    console.log('tournament',tournament['id']);
+    // console.log('tournament',tournament['id']);
     var content = `
     <h4>Заполняем `+tournament['name']+`</h4>
     `+groupFill(tournament);
-    console.log('groupFill(tournament)', groupFill(tournament));
+    // console.log('groupFill(tournament)', groupFill(tournament));
     $('.tournament-box').append(content).show();
-
 }
 
 function groupFill(tournament) {
     var arGroup = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     var count = tournament['teams']/tournament['group'];
-    for(i = 0; i < count; i++){
-        var content = `
-        <div class="teams">
-            <select class="teams-name">
+    var contents = '';
+    for(j = 0; j < tournament['group']; j++){
+        var groupContents = '<div class="group-title" data="'+j+'">Группа '+arGroup[j]+'</div>';
+        for(i = 0; i < count; i++){
+            var content = `
+        <div class="teams" data-group="`+j+`">
+            <select class="teams-name country-load" >
                 <option value="">Выбрать</option>
             </select>
-            <div class="teams-flag"><img src="/public/image/flags/Russian.ico" alt=""></div>
-            <div class="add-to-bd event-btn">добавить</div>
+            <div class="teams-flag"></div>
+            <input type="number" class="team-rating">
+            <div class="team-flag"></div>
+            <div class="add-team-tornament event-btn">добавить</div>  
+            <div class="add_team_confirm"></div>
         </div>
         `;
+            groupContents = groupContents + content;
+        }
+        contents = contents + groupContents;
     }
-    return content;
+    // console.log('count', count);
 
-
+    return contents;
 }

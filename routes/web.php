@@ -60,3 +60,7 @@ Route::post('/newMessage', 'ajax\messageProcessing@loadNew');
 Route::post('/addCountry', 'ajax\eventModif@addCountry');
 // получение информации о турнире
 Route::post('/getEvents', 'ajax\eventModif@getEvents');
+// получение списка стран
+Route::post('/getCountries', 'ajax\eventModif@getCountries');
+// добавляем команды турнира
+Route::post('/addTeams', 'ajax\eventModif@addTeams');

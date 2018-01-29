@@ -111,18 +111,18 @@ button {
 .tournament-box {
   display: none;
 }
-.group-box .group-title {
+.group-title {
   display: inline-block;
   box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
   border-radius: 10px 10px 0 0;
   padding: 5px 10px;
   margin-left: 10px;
 }
-.group-box .teams {
+.teams {
   width: 100%;
   display: inline-block;
 }
-.group-box .teams .teams-name {
+.teams .teams-name {
   float: left;
   display: inline-block;
   width: 300px;
@@ -130,24 +130,37 @@ button {
   border-radius: 10px  0 0 10px;
   box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
 }
-.group-box .teams .teams-flag {
+.teams .teams-flag {
   float: left;
 }
-.group-box .teams .teams-flag img {
+.teams .teams-flag img {
   width: 30px;
   height: 30px;
 }
-.group-box .teams .add-to-bd {
+.teams .team-rating {
+  float: left;
+  display: inline-block;
+  width: 60px;
+  padding: 3px;
+  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.teams .add-team-tornament {
   float: left;
   display: inline-block;
   padding: 4px 15px;
-  border-radius: 10px;
-  border: 1px solid #ff6347;
-  box-shadow: 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
-  background: #ff6347;
-  color: #ffffff;
-  cursor: pointer;
+  margin-bottom: 1px;
 }
-.group-box .teams .clr {
+.teams .clr {
   clear: both;
+}
+.teams .add_team_confirm {
+  float: left;
+}
+.teams .add_team_confirm .fa-check-square-o {
+  background: white;
+  border-radius: 10px;
+  padding: 2px;
+  color: #9cc218;
 }
