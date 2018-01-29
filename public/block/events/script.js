@@ -117,13 +117,15 @@ $(document).ready(function () {
             '/getEvents',
             data,
             function (result) {
+                $('.tornament-box').find('h4').remove();
+                $('.tornament-box').prepend('<h4>Заполняем '+result['name']+'</h4>');
                 tournamentFill(result)
             }, 'json'
         );
     });
 
     // горячая подгрузка команд в select
-    $('.tournament-box').on('focus','.teams-name',function () {
+    $('.group-box').on('focus','.teams-name',function () {
         $.post(
             '/getCountries',
             function (result) {
@@ -138,14 +140,14 @@ $(document).ready(function () {
         // console.log('mi tyt focus');
     });
     // добавляем флажок
-    $('.tournament-box').on('change','.teams-name',function () {
+    $('.group-box').on('change','.teams-name',function () {
         $(this).parent().find('.teams-flag').children().remove();
         $(this).parent().find('.teams-flag').append('<img class="country-flag" alt="" src="/public/image/flags/' + $(this).find('option:selected').attr('data') + '.ico">');
         $(this).parent().find('.teams-flag').attr('data-flag', $(this).find('option:selected').attr('data'));
         $(this).parent().find('.teams-name').removeClass('country-load');
     });
     // добавляем команду в турнир
-    $('.tournament-box').on('click','.add-team-tornament',function () {
+    $('.group-box').on('click','.add-team-tornament',function () {
         var data = {
             country: $(this).parent().find('.teams-name').val(),
             name: $(this).parent().find('option:selected').text(),
@@ -166,8 +168,9 @@ $(document).ready(function () {
                 }
             }, 'json'
         );
-
-
+    });
+    $('.group-box-open').click(function () {
+        $('.group-box').toggle();
     });
 
 
@@ -184,14 +187,13 @@ function cyrill_to_latin(text) {
     return text;
 }
 function tournamentFill(tournament) {
-    $('.tournament-box').attr({'data-tournament': tournament['id'], 'data-sport': tournament['sport']}).children().remove();
+    $('.group-box').attr({'data-tournament': tournament['id'], 'data-sport': tournament['sport']}).children().remove();
 
     // console.log('tournament',tournament['id']);
-    var content = `
-    <h4>Заполняем `+tournament['name']+`</h4>
+    var content = `    
     `+groupFill(tournament);
     // console.log('groupFill(tournament)', groupFill(tournament));
-    $('.tournament-box').append(content).show();
+    $('.group-box').append(content).show();
 }
 
 function groupFill(tournament) {

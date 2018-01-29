@@ -100,9 +100,29 @@
                     <?}?>
                 </select>
             </div>
-            <div class="tournament-box">
-
+            <div class="tornament-box">
+                <button class="event-btn group-box-open">Группы</button>
+                <button class="event-btn match-box-open">Матчи</button>
+                <div class="group-box">
+                </div>
+                <div class="match-box">
+                    <div class="matches">
+                        <input type="datetime-local" class="match-time" min="2018-02-14T00:00:00" max="2018-02-25T00:00:00" step="300">
+                        <select name="" id="" class="home-team float-left">
+                            <option value="">Выбрать</option>
+                        </select>
+                        <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                        <select name="" id="" class="visit-team float-left">
+                            <option value="">Выбрать</option>
+                        </select>
+                        <div class="add-match-tornament event-btn">добавить</div>
+                        <div class="add_match_confirm"></div>
+                    </div>
+                </div>
             </div>
+
     {{--<div class="group-box">--}}
         {{--<div class="group-title">Группа A</div>--}}
         {{--<div class="teams">--}}

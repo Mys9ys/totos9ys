@@ -164,3 +164,27 @@ button {
   padding: 2px;
   color: #9cc218;
 }
+.matches .match-time {
+  padding: 5px;
+  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+.matches .home-team,
+.matches .visit-team {
+  padding: 7px;
+  box-shadow: inset 0px 2px 8px 0px rgba(40, 40, 40, 0.4);
+  border: none;
+}
+.matches .match-flag {
+  display: inline-block;
+}
+.matches .match-flag img {
+  width: 30px;
+  height: 30px;
+}
+.matches .add-match-tornament {
+  border-radius: 0 10px 10px 0;
+  padding: 4px 15px;
+  margin-bottom: 1px;
+}
