@@ -232,3 +232,11 @@ function groupFill(tournament) {
 
     return contents;
 }
+
+function tournamentMatchFill(tournament) {
+
+}
+
+function matchFill(tournament) {
+
+}
