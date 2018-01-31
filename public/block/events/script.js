@@ -119,7 +119,8 @@ $(document).ready(function () {
             function (result) {
                 $('.tornament-box').find('h4').remove();
                 $('.tornament-box').prepend('<h4>Заполняем '+result['name']+'</h4>');
-                tournamentFill(result)
+                tournamentFill(result);
+                tournamentMatchFill(result);
             }, 'json'
         );
     });
@@ -234,9 +235,64 @@ function groupFill(tournament) {
 }
 
 function tournamentMatchFill(tournament) {
-
+    $('.match-box').children().remove();
+    var content = `    
+    `+matchFill(tournament);
+    // console.log('groupFill(tournament)', groupFill(tournament));
+    $('.match-box').append(content).show();
 }
 
 function matchFill(tournament) {
+    var arGroup = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    var contents = '';
+    var count = tournament['teams']/tournament['group'];
+    var nFact = rFact(count)/(2*rFact(count-2));
+    var group = 1;
+   
+    for(i = 1; i < tournament['count_match']+1; i++){
+        if (i>=nFact*tournament['group']) {group=0; groupText ='';} else {
+            var groupText = '<input type="text" disabled value="'+arGroup[group-1]+'" class="match-info-input">'
+        }
+        var content = `
+            <div class="matches" data-group="`+group+`">
+                <input type="datetime-local" class="match-time" min="`+dateChange(tournament['start_event'])+`" max="`+dateChange(tournament['end_event'])+`" step="300">
+                <select name="" id="" class="home-team float-left">
+                    <option value="">Выбрать</option>
+                </select>
+                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                <select name="" id="" class="visit-team float-left">
+                    <option value="">Выбрать</option>
+                </select>
+                <input type="text" disabled value="`+i+`" class="match-info-input">
+                `+groupText+`
+                <div class="add-match-tornament event-btn">добавить</div>
+                <div class="add_match_confirm"></div>
+            </div>
+    `;
+        if (i%nFact==0){group++;}
 
+        contents = contents + content;
+    }
+
+    return contents;
+}
+// факториал для определения количества матчей в группе
+function rFact(num)
+{
+    if (num === 0)
+        return 1;
+    else
+        return num * rFact(num - 1);
+}
+// подгонка времени под date-local
+function dateChange(value) {
+    var time_loc = new Date(value);
+    var year = time_loc.getFullYear();
+    var month = time_loc.getMonth()+1;
+    var day = time_loc.getDate();
+    if (month.toString().length == 1) month = '0'+month;
+    if (day.toString().length == 1) day = '0'+day;
+    return year+'-'+month+'-'+day+'T00:00:00'
 }

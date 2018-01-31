@@ -188,3 +188,6 @@ button {
   padding: 4px 15px;
   margin-bottom: 1px;
 }
+.matches .match-info-input {
+  width: 30px;
+}
