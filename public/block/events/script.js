@@ -169,8 +169,17 @@ $(document).ready(function () {
             }, 'json'
         );
     });
+    // открытие-закрытие окна групп 
     $('.group-box-open').click(function () {
         $('.group-box').toggle();
+    });
+    // открытие-закрытие окна групп 
+    $('.match-box-open').click(function () {
+        $('.match-box').toggle();
+    });
+
+    $('.match-box').on('click', '.add-match-tornament',function () {
+        console.log('mi tyt');
     });
 
 
@@ -222,4 +231,12 @@ function groupFill(tournament) {
     // console.log('count', count);
 
     return contents;
+}
+
+function tournamentMatchFill(tournament) {
+
+}
+
+function matchFill(tournament) {
+
 }
