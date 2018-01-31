@@ -123,24 +123,7 @@
                 </div>
             </div>
 
-    {{--<div class="group-box">--}}
-        {{--<div class="group-title">Группа A</div>--}}
-        {{--<div class="teams">--}}
-            {{--<select class="teams-name">--}}
-                {{--<option value="">Выбрать</option>--}}
-            {{--</select>--}}
-            {{--<div class="teams-flag"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>--}}
-            {{--<div class="add-to-bd event-btn">добавить</div>--}}
-        {{--</div>--}}
-        {{--<div class="teams">--}}
-            {{--<select class="teams-name">--}}
-                {{--<option value="">Выбрать</option>--}}
-            {{--</select>--}}
-            {{--<div class="teams-flag"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>--}}
-            {{--<div class="add-to-bd event-btn">добавить</div>--}}
-            {{--<div class="clr"></div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+
 
         </div><?//end container?>
     </div>
