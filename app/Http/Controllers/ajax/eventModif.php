@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ajax;
 
 use App\Countries;
+use App\Matches;
 use App\Teams;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -74,6 +75,7 @@ class eventModif extends Controller
     public function getCountries(){
         return json_encode(Countries::all());
     }
+    // добавляем команду в турнир
     public function addTeams(Request $request){
         $this->validate($request, [
             'country' => 'required',
@@ -88,8 +90,18 @@ class eventModif extends Controller
         } else {
             return json_encode(false);
         }
-
     }
+
+    public function getMatches(Request $request){
+        $res = array(
+            'teams' => Teams::where('tournament', '=', $request->id)->get(),
+            'countries' => Countries::all(),
+            'matches' => Matches::where('tournament', '=', $request->id)->get(),
+        );
+        return json_encode($res);
+    }
+
+
 }
 
 //avatar

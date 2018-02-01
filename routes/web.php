@@ -64,3 +64,5 @@ Route::post('/getEvents', 'ajax\eventModif@getEvents');
 Route::post('/getCountries', 'ajax\eventModif@getCountries');
 // добавляем команды турнира
 Route::post('/addTeams', 'ajax\eventModif@addTeams');
+// загружаем данные о командах турнира и заполненых матчах
+Route::post('/getMatches', 'ajax\eventModif@getMatches');

@@ -121,6 +121,7 @@ $(document).ready(function () {
                 $('.tornament-box').prepend('<h4>Заполняем '+result['name']+'</h4>');
                 tournamentFill(result);
                 tournamentMatchFill(result);
+                fillMatchSelect(result['id']);
             }, 'json'
         );
     });
@@ -250,7 +251,7 @@ function matchFill(tournament) {
     var group = 1;
    
     for(i = 1; i < tournament['count_match']+1; i++){
-        if (i>=nFact*tournament['group']) {group=0; groupText ='';} else {
+        if (i>nFact*tournament['group']) {group=0; groupText ='';} else {
             var groupText = '<input type="text" disabled value="'+arGroup[group-1]+'" class="match-info-input">'
         }
         var content = `
@@ -295,4 +296,22 @@ function dateChange(value) {
     if (month.toString().length == 1) month = '0'+month;
     if (day.toString().length == 1) day = '0'+day;
     return year+'-'+month+'-'+day+'T00:00:00'
+}
+
+function fillMatchSelect(tournamentID) {
+    $.post(
+        '/getMatches',
+        {id:tournamentID},
+        function (result) {
+            console.log('result', result['countries']);
+            console.log('result', result['matches']);
+            console.log('result', result['teams']);
+
+        }, 'json'
+    );
+    // console.log('group parse', $('.match-box').find('.matches'));
+    // $('.match-box').find('.matches').each(function () {
+    //     var group = $(this).data('group');
+    //     console.log('group',group);
+    // });
 }
