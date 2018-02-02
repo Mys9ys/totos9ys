@@ -26,6 +26,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/getCountries',
         '/addTeams',
         '/getMatches',
+        '/setMatches',
         //
     ];
 }

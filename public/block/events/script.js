@@ -20,7 +20,7 @@ $(document).ready(function () {
                 data[$this.attr('data')] = $this.val();
             }
         });
-        console.log('data event', data);
+        // console.log('data event', data);
         $.post(
             '/addEvent',
             data,
@@ -179,9 +179,29 @@ $(document).ready(function () {
     $('.match-box-open').click(function () {
         $('.match-box').toggle();
     });
-
-    $('.match-box').on('click', '.add-match-tornament',function () {
-        console.log('mi tyt');
+    // добавить матч
+    $('.match-box').on('click', '.add-match-tournament',function () {
+        var data = {
+            group:$(this).parent().data('group'),
+            tournament:$(this).parent().data('tournament'),
+            sport:$(this).parent().data('sport'),
+        };
+        $(this).parent().children().each(function () {
+            var $this = $(this);
+            if ($this.attr('data')) {
+                data[$this.attr('data')] = $this.val();
+            }
+        });
+        console.log('data', data);
+        $.post(
+            '/setMatches',
+            data,
+            function (result) {
+                if(result == true) {
+                    $(this).parent().find('.add_match_confirm').append('<i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>');
+                }
+            }, 'json'
+        );
     });
 
 
@@ -230,8 +250,6 @@ function groupFill(tournament) {
         }
         contents = contents + groupContents;
     }
-    // console.log('count', count);
-
     return contents;
 }
 
@@ -255,20 +273,20 @@ function matchFill(tournament) {
             var groupText = '<input type="text" disabled value="'+arGroup[group-1]+'" class="match-info-input">'
         }
         var content = `
-            <div class="matches" data-group="`+group+`">
-                <input type="datetime-local" class="match-time" min="`+dateChange(tournament['start_event'])+`" max="`+dateChange(tournament['end_event'])+`" step="300">
-                <select name="" id="" class="home-team float-left">
+            <div class="matches" data-group="`+group+`" data-tournament="`+tournament['id']+`" data-sport="`+tournament['sport']+`">
+                <input type="datetime-local" class="match-time" min="`+dateChange(tournament['start_event'])+`" max="`+dateChange(tournament['end_event'])+`" step="300" data="begin_date">
+                <select name="" id="" class="home-team float-left" data="home_id">
                     <option value="">Выбрать</option>
                 </select>
-                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                <div class="match-flag float-left home-flag"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
                 <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
-                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
-                <select name="" id="" class="visit-team float-left">
+                <div class="match-flag float-left visit-flag"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
+                <select name="" id="" class="visit-team float-left" data="visit_id">
                     <option value="">Выбрать</option>
                 </select>
-                <input type="text" disabled value="`+i+`" class="match-info-input">
+                <input type="text" disabled value="`+i+`" class="match-info-input game_number" data="game_number">
                 `+groupText+`
-                <div class="add-match-tornament event-btn">добавить</div>
+                <div class="add-match-tournament event-btn">добавить</div>
                 <div class="add_match_confirm"></div>
             </div>
     `;
@@ -297,21 +315,44 @@ function dateChange(value) {
     if (day.toString().length == 1) day = '0'+day;
     return year+'-'+month+'-'+day+'T00:00:00'
 }
-
+// заполняем данные матча
 function fillMatchSelect(tournamentID) {
     $.post(
         '/getMatches',
         {id:tournamentID},
         function (result) {
-            console.log('result', result['countries']);
-            console.log('result', result['matches']);
-            console.log('result', result['teams']);
+            var $arTeams = result['teams'];
+            var $arMatches = result['matches'];
+            console.log('$arMatches',$arMatches);
 
+            $('.match-box').find('.matches').each(function () {
+                var $this = $(this);
+                var group = $this.data('group');
+                var $matchID = $this.find('.game_number').val();
+
+                $.each($arTeams, function (key, value) {
+                    if(value['group'] == group){
+                        if($matchID <= $arMatches.length ){
+                            var homeSelected = matchSelected($arMatches, $matchID, 'home_id', value["id"]);
+                            var visitSelected = matchSelected($arMatches, $matchID, 'visit_id', value["id"]);
+                        }
+                        $this.find('.home-team').append('<option value="'+value["id"]+'" '+homeSelected+'>'+value["name"]+'</option>');
+                        $this.find('.visit-team').append('<option value="'+value["id"]+'" '+visitSelected+'>'+value["name"]+'</option>');
+                    }
+                });
+            });
         }, 'json'
     );
-    // console.log('group parse', $('.match-box').find('.matches'));
-    // $('.match-box').find('.matches').each(function () {
-    //     var group = $(this).data('group');
-    //     console.log('group',group);
-    // });
+}
+// заполняем элемент селект данными из базы
+function matchSelected($arMatches, $matchID, selector, $teamID) {
+    var $res;
+    $.each($arMatches, function (id, match) {
+        if(match['game_number'] == $matchID){
+            if(match[selector] ==$teamID){
+                $res ='selected';
+            }
+        }
+    });
+    return $res;
 }

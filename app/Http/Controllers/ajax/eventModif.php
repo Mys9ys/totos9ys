@@ -95,10 +95,21 @@ class eventModif extends Controller
     public function getMatches(Request $request){
         $res = array(
             'teams' => Teams::where('tournament', '=', $request->id)->get(),
-            'countries' => Countries::all(),
             'matches' => Matches::where('tournament', '=', $request->id)->get(),
         );
         return json_encode($res);
+    }
+    public function setMatches(Request $request){
+        $res = new Matches();
+        foreach ($request->all() as $key=>$value){
+            $res->$key=$value;
+        }
+        $res->user_added=Auth::user()->id;
+        if ($res->save()) {
+            return json_encode(true);
+        } else {
+            return json_encode(false);
+        }
     }
 
 
