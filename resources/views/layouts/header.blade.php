@@ -21,6 +21,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('public/js/jquery-3.0.0.min.js') }}"></script>
+    <?//functions?>
+    <?include_once(public_path().'/block/footer/functions.php');?>
 </head>
 
 <nav class="navbar navbar-default navbar-static-top">
