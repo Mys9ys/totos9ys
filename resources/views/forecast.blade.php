@@ -11,6 +11,39 @@
     </div>
 
 @else
+    <div class="forecast_block forecast_football">
+        <div class="container forecast_wrap">
+            <div class="match_block">
+                <div class="match_info info_box football_shadow">
+                    <div class="match_date left info_box">
+                        <i class="fa fa-calendar" aria-hidden="true"></i><span>14.05.2018</span>
+                    </div>
+                    <div class="match_time left info_box">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i><span>18:00</span>
+                    </div>
+                    <div class="match_variance left info_box">
+                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>через 5 месяцев</span>
+                    </div>
+                </div>
+                <div class="teams_block">
+                    <div class="team_block">
+                        <div class="team_flag left">
+                            <img src="http://totos9ys.ru/public/image/flags/Russian.ico" alt="">
+                        </div>
+                        <div class="team_title">Россия</div>
+                        <div class="teams_goal"></div>
+                    </div>
+                    <div class="team_block">
+                        <div class="team_flag left">
+                            <img src="http://totos9ys.ru/public/image/flags/Saudi-Arabia.ico" alt="">
+                        </div>
+                        <div class="team_title">Саудовская аравия</div>
+                        <div class="teams_goal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="forecast_block forecast-football">
         <div class="container ">
             <h2>Football</h2>

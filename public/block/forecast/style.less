@@ -23,7 +23,9 @@ button {
 .float-left {
   float: left;
 }
-
+.left{
+  float: left;
+}
 .float-right {
   float: right;
 }
@@ -72,6 +74,9 @@ button {
 .football-shadow {
   box-shadow: inset 0px 2px 8px 0px @bgrndColorFootball;
 }
+.football_shadow {
+  box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
+}
 
 .football-shadow-lite {
   box-shadow: inset 0px 2px 8px 0px @bgrndColorLiteFootball;
@@ -80,6 +85,34 @@ button {
 .forecast_block {
   width: 100%;
   min-height: 70px;
+}
+.forecast_football{
+  background: @bgrndColorFootball;
+  .forecast_wrap {
+    background: @bgrndColorLiteFootball;
+    min-height: 70px;
+    .info_box{
+      border-radius: 10px;
+      span {
+        margin-left: 5px;
+      }
+      margin-bottom: 1px;
+    }
+    .match_block{
+      .match_wrap {
+        width: 820px;
+      }
+
+      .match_info {
+        display: inline-block;
+        padding: 5px;
+      }
+
+      .match_time, .match_date, .match_variance {
+        padding: 5px;
+      }
+    }
+  }
 }
 
 .forecast-football {
