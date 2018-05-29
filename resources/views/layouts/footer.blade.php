@@ -25,3 +25,4 @@
 <script src="{{ asset('public/block/footer/script.js') }}"></script>
 
 
+

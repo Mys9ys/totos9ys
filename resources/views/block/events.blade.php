@@ -1,8 +1,42 @@
 <link href="{{ asset('public/block/events/style.css') }}" rel="stylesheet">
-
+<? date_default_timezone_set('Europe/Moscow');
+$today = date('Y-m-d H:i:s');?>
 <div class="events_block">
     <div class="container">
-        <?echo 'mi ytyt;'?>
+        <div class="tournament-title">
+            <span class="tournament-title-text">Наши турниры</span><span><div class="hockey-puck"><div class="puck"></div></div></span>
+            <span><i class="fa fa-futbol-o "></i></span>
+        </div>
+        <?$arEvents = \App\Events::all();?>
+        <?foreach ($arEvents as $event){?>
+            <div class="tournament-wrap relative">
+                <div class="tournament-avatar"><img src="public/image/tournament/<?=$event['avatar']?>.jpg" alt=""></div>
+                <div class="tournament-center float-left">
+                    <div class="tournament-block float-left"><div class="tournament-block-title">Название: </div><span><?=$event['name']?></span></div>
+                    <div class="tournament-block float-left"><div class="tournament-block-title">Короткое название: </div><span><?=$event['short_name']?></span></div><br>
+                    <div class="tournament-block float-left"><div class="tournament-block-title">Количество команд: </div><span><?=$event['teams']?></span></div>
+                    <div class="tournament-block float-left"><div class="tournament-block-title">Количество групп: </div><span><?=$event['group']?></span></div>
+                    <div class="tournament-block float-left"><div class="tournament-block-title">Количество матчей: </div><span><?=$event['count_match']?></span></div>
+
+                </div>
+                <div class="tournament-block tournament-date">
+                    <?if($today<$event['start_event']){?>
+                        <div class="tournament-block-title greenColor">Начнется: </div><span><?=time_counting(strtotime($event['start_event']))?></span>
+                    <?} elseif($today>$event['start_event']&& $today<$event['end_event'])  {?>
+                        <div class="tournament-block-title liteGreenColor">Закончится: </div><span><?=time_counting(strtotime($event['end_event']))?></span>
+                    <?} else{?>
+                        <div class="tournament-block-title">Закончился: </div><span><?=time_counting(strtotime($event['end_event']))?></span>
+                    <?}?>
+                </div>
+                <div class="tournament-btn btn-tournament-descrition">Развернуть описание</div>
+            </div>
+        <div class="tournament-descrition-box">
+            <textarea class=""><?=$event['description']?></textarea>
+            <div class="tournament-descrition-close"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+        </div>
+
+        <?}?>
+
     </div>
 </div>
 @if(Auth::guest())
@@ -110,29 +144,14 @@
                 </div>
             </div>
 
-            <div class="matches">
-                <input type="datetime-local" class="match-time" min="2018-02-14T00:00" max="2018-02-25T00:00:00" step="300">
-                <select name="" id="" class="home-team float-left">
-                    <option value="">Выбрать</option>
-                </select>
-                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
-                <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
-                <div class="match-flag float-left"><img src="/public/image/flags/Afghanistan.ico" alt=""></div>
-                <select name="" id="" class="visit-team float-left">
-                    <option value="">Выбрать</option>
-                </select>
-                <div class="add-match-tornament event-btn">добавить</div>
-                <div class="add_match_confirm"></div>
-            </div>
+
 
         </div><?//end container?>
     </div>
     <?}?>
 @endif
-<?
 
-
-?>
 
 
 <script src="{{ asset('public/block/events/script.js') }}"></script>
+<script src="{{ asset('public/block/events/admin.js') }}"></script>

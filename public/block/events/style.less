@@ -1,4 +1,4 @@
-@bgrndColor: rgba(244, 164, 96, 0.7);
+@bgrndColor: rgb(247, 191, 144);
 @bgrndColorLite: rgb(255, 222, 173);
 @textColor: rgb(40, 40, 40);
 @btntxt: rgb(255, 255, 255);
@@ -122,7 +122,7 @@ button {
     padding: 5px;
   }
 }
-.tournament-box{
+.tornament-box{
   display: none;
 }
 
@@ -207,5 +207,134 @@ button {
   }
   .match-info-input{
     width: 30px;
+  }
+}
+.tournament-title{
+  box-shadow: 0px 2px 8px 0px rgba(40,40,40, .4);
+  display: inline-block;
+  border-radius: 10px;
+  margin: 10px 0;
+  span{
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+    padding: 5px;
+  }
+  .tournament-title-text{
+    font-weight: bold;
+    line-height: 36px;
+  }
+  .fa-hockey-puck, .fa-futbol{
+    cursor: pointer;
+  }
+}
+.tournament-wrap{
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  background: @bgrndColor;
+  box-shadow: 0px 2px 8px 0px rgba(40,40,40, .4);
+  padding-right: 200px;
+  .tournament-avatar{
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 5px;
+    img{
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 120px;
+    }
+  }
+  .tournament-block{
+    display: inline-block;
+    background: @bgrndColorLite;
+    border-radius: 10px;
+    box-shadow: inset 0px 2px 8px 0px rgba(40,40,40, .4);
+    overflow: hidden;
+    .tournament-block-title{
+      display: inline-block;
+      float: left;
+      font-weight: bold;
+      padding: 6px 10px;
+      background: @bgrndColorLite;
+      border-right: 1px solid rgba(40,40,40, .4);;
+    }
+    span{
+      display: inline-block;
+      padding: 6px 10px;
+    }
+  }
+  .tournament-center{
+    display: inline-block;
+    width: 800px;
+    vertical-align: top;
+    padding-top: 10px;
+  }
+  .tournament-date{
+    position: absolute;
+    top:0px;
+    right: 0px;
+  }
+  .btn-tournament-descrition{
+    position: absolute;
+    top:45px;
+    right: 0px;
+  }
+}
+.tournament-wrap:first-of-type{
+  margin-top: 5px;
+}
+.tournament-btn{
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 8px 0px rgba(40,40,40, .4);
+  border-radius: 10px;
+  background: @bgrndColorLite;
+}
+.tournament-descrition-box{
+  display: none;
+  position: relative;
+  width: 800px;
+  margin: auto;
+  textarea{
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    background: rgba(51,51,51, 0.10);
+    border-radius: 10px;
+  }
+  .tournament-descrition-close{
+    position: absolute;
+    top:0px;
+    right: -25px;
+    cursor: pointer;
+    font-size: 24px;
+    color:  rgba(51,51,51, 0.30);
+  }
+}
+
+.greenColor{
+  background: rgb(156, 194, 24)!important;
+}
+.liteGreenColor{
+  background:rgb(215, 231, 163)!important;
+}
+.hockey-puck{
+  display: inline-block;
+  overflow: hidden;
+  width: 24px;
+  height: 26px;
+  .puck{
+    margin-top: 7px;
+    width: 24px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgb(51,51,51);
+    box-shadow: 0 2px 0px rgb(255, 222, 173),
+    0 7px 0px 2px rgba(51,51,51,1) ;
   }
 }
