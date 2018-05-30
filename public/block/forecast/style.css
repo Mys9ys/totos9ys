@@ -10,6 +10,9 @@ button {
 .float-left {
   float: left;
 }
+.left {
+  float: left;
+}
 .float-right {
   float: right;
 }
@@ -55,12 +58,41 @@ button {
 .football-shadow {
   box-shadow: inset 0px 2px 8px 0px #9cc218;
 }
+.football_shadow {
+  box-shadow: 0px 2px 8px 0px #9cc218;
+}
 .football-shadow-lite {
   box-shadow: inset 0px 2px 8px 0px #d7e7a3;
 }
 .forecast_block {
   width: 100%;
   min-height: 70px;
+}
+.forecast_football {
+  background: #9cc218;
+}
+.forecast_football .forecast_wrap {
+  background: #d7e7a3;
+  min-height: 70px;
+}
+.forecast_football .forecast_wrap .info_box {
+  border-radius: 10px;
+  margin-bottom: 1px;
+}
+.forecast_football .forecast_wrap .info_box span {
+  margin-left: 5px;
+}
+.forecast_football .forecast_wrap .match_block .match_wrap {
+  width: 820px;
+}
+.forecast_football .forecast_wrap .match_block .match_info {
+  display: inline-block;
+  padding: 5px;
+}
+.forecast_football .forecast_wrap .match_block .match_time,
+.forecast_football .forecast_wrap .match_block .match_date,
+.forecast_football .forecast_wrap .match_block .match_variance {
+  padding: 5px;
 }
 .forecast-football {
   background: #9cc218;
