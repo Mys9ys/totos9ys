@@ -31,6 +31,7 @@
                             <img src="http://totos9ys.ru/public/image/flags/Russian.ico" alt="">
                         </div>
                         <div class="team_title left">Россия</div>
+                        <p class="lamp"></p>
                         <div class="teams_goal right">1</div>
                     </div>
                     <div class="team_block">
@@ -38,7 +39,27 @@
                             <img src="http://totos9ys.ru/public/image/flags/Saudi-Arabia.ico" alt="">
                         </div>
                         <div class="team_title left">Саудовская аравия</div>
+                        <p class="lamp"></p>
                         <div class="teams_goal right">1</div>
+                    </div>
+                </div>
+                <div class="main_match_info_box">
+                    <div class="main_match_info_title">Основное</div>
+                    <div class="match_result_wrap">
+                        <div class="win1_box"><span>П1</span><input name="dzen" type="radio" value="nedzen"></div>
+                        <div class="draw_box"><span>Н</span><input name="dzen" type="radio" value="nedzen"></div>
+                        <div class="win2_box"><span>П2</span><input name="dzen" type="radio" value="nedzen"></div>
+                    </div>
+                    <div class="goals_sum_wrap">
+                        <div class="goals_sum_title">
+                            <i class="sum-icon">∑ <i class="fa fa-futbol-o" aria-hidden="true"></i></i><span>Количество голов</span>
+                        </div>
+                    </div>
+                    <div class="goals_margin_wrap">
+                        <div class="goals_margin_title">
+                            <i class="margin-icon">+/- <i class="fa fa-futbol-o" aria-hidden="true"></i></i><span>Разница голов</span>
+                            <p class="lamp"></p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -102,8 +102,12 @@ button {
   width: 300px;
 }
 .forecast_football .forecast_wrap .match_block .teams_block .team_block {
+  position: relative;
   display: inline-block;
   width: 100%;
+  padding-left: 8px;
+  box-shadow: 0px 2px 8px 0px #9cc218;
+  border-radius: 10px;
 }
 .forecast_football .forecast_wrap .match_block .teams_block .team_block .team_flag {
   width: 45px;
@@ -126,6 +130,26 @@ button {
   text-align: center;
   line-height: 43px;
   vertical-align: middle;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box {
+  position: relative;
+  margin-top: 15px;
+  padding-top: 12px;
+  display: block;
+  width: 300px;
+  padding-left: 8px;
+  box-shadow: 0px 2px 8px 0px #9cc218;
+  border-radius: 10px;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .main_match_info_title {
+  color: #9cc218;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: -12px;
+  left: 20px;
+  padding: 2px;
+  background: #d7e7a3;
 }
 .forecast-football {
   background: #9cc218;

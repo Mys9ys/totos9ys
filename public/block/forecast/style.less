@@ -118,8 +118,12 @@ button {
         display: block;
         width: 300px;
         .team_block{
+          position: relative;
           display: inline-block;
           width: 100%;
+          padding-left: 8px;
+          box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
+          border-radius: 10px;
           .team_flag{
             width: 45px;
             img{
@@ -142,6 +146,26 @@ button {
             line-height: 43px;
             vertical-align: middle;
           }
+        }
+      }
+      .main_match_info_box{
+        position: relative;
+        margin-top: 15px;
+        padding-top: 12px;
+        display: block;
+        width: 300px;
+        padding-left: 8px;
+        box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
+        border-radius: 10px;
+        .main_match_info_title{
+          color: @bgrndColorFootball;
+          position: absolute;
+          font-size: 14px;
+          font-weight: bold;
+          top:-12px;
+          left: 20px;
+          padding: 2px;
+          background: @bgrndColorLiteFootball;
         }
       }
     }
