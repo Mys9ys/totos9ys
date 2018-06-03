@@ -30,15 +30,15 @@
                         <div class="team_flag left">
                             <img src="http://totos9ys.ru/public/image/flags/Russian.ico" alt="">
                         </div>
-                        <div class="team_title">Россия</div>
-                        <div class="teams_goal"></div>
+                        <div class="team_title left">Россия</div>
+                        <div class="teams_goal right">1</div>
                     </div>
                     <div class="team_block">
                         <div class="team_flag left">
                             <img src="http://totos9ys.ru/public/image/flags/Saudi-Arabia.ico" alt="">
                         </div>
-                        <div class="team_title">Саудовская аравия</div>
-                        <div class="teams_goal"></div>
+                        <div class="team_title left">Саудовская аравия</div>
+                        <div class="teams_goal right">1</div>
                     </div>
                 </div>
             </div>

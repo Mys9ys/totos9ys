@@ -29,6 +29,9 @@ button {
 .float-right {
   float: right;
 }
+.right{
+  float: right;
+}
 
 .clr {
   clear: both;
@@ -110,6 +113,36 @@ button {
 
       .match_time, .match_date, .match_variance {
         padding: 5px;
+      }
+      .teams_block{
+        display: block;
+        width: 300px;
+        .team_block{
+          display: inline-block;
+          width: 100%;
+          .team_flag{
+            width: 45px;
+            img{
+              max-width: 100%;
+            }
+          }
+          .team_title{
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .teams_goal{
+            width: 43px;
+            height: 43px;
+            background: gray;
+            border-radius: 0 5px 5px 0;
+            font-size: 36px;
+            text-align: center;
+            line-height: 43px;
+            vertical-align: middle;
+          }
+        }
       }
     }
   }
