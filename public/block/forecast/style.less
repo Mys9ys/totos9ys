@@ -12,12 +12,12 @@
 
 input,
 button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+  //-ms-appearance: none;
+  //appearance: none;
+  //outline: 0;
+  //box-shadow: none;
 }
 
 .float-left {
@@ -151,10 +151,10 @@ button {
       .main_match_info_box{
         position: relative;
         margin-top: 15px;
-        padding-top: 12px;
+        padding: 12px;
+        padding-right: 24px;
         display: block;
         width: 300px;
-        padding-left: 8px;
         box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
         border-radius: 10px;
         .main_match_info_title{
@@ -166,6 +166,31 @@ button {
           left: 20px;
           padding: 2px;
           background: @bgrndColorLiteFootball;
+        }
+        .match_prop_wrap{
+          display: inline-block;
+          width: 100%;
+          border-bottom: 1px solid @bgrndColorFootball;
+        }
+        .match_prop_title{
+          display: inline-block;
+          width: 75%;
+          b{
+            float: right;
+            display: inline-block;
+            padding: 2px;
+            background: rgb(220,220,220);
+            border: 1px solid @bgrndColorFootball;
+            border-radius: 5px;
+          }
+        }
+        .win_box{
+          display: block;
+          padding: 1px 3px;
+          text-align: center;
+          span{
+            display: block;
+          }
         }
       }
     }
