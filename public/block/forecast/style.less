@@ -9,6 +9,7 @@
 @bgrndColorLiteFootball: rgb(215, 231, 163);
 @bgrndColorHockey: rgba(30, 144, 255, 0.7);
 @bgrndColorLiteHockey: rgb(135, 206, 235);
+@bgrndInfoLite: #abd7da;
 
 input,
 button {
@@ -139,7 +140,7 @@ button {
           .teams_goal{
             width: 43px;
             height: 43px;
-            background: gray;
+            background: @bgrndInfoLite;
             border-radius: 0 5px 5px 0;
             font-size: 36px;
             text-align: center;
@@ -152,9 +153,10 @@ button {
         position: relative;
         margin-top: 15px;
         padding: 12px;
-        padding-right: 24px;
+        padding-right: 32px;
+        padding-left: 20px;
         display: block;
-        width: 300px;
+        width: 310px;
         box-shadow: 0px 2px 8px 0px @bgrndColorFootball;
         border-radius: 10px;
         .main_match_info_title{
@@ -170,27 +172,97 @@ button {
         .match_prop_wrap{
           display: inline-block;
           width: 100%;
-          border-bottom: 1px solid @bgrndColorFootball;
+          border-bottom: 2px solid @bgrndColorFootball;
+          position: relative;
+          //padding: 4px 0px;
         }
         .match_prop_title{
           display: inline-block;
-          width: 75%;
+          width: 70%;
+          padding: 3px 2px;
           b{
             float: right;
             display: inline-block;
             padding: 2px;
-            background: rgb(220,220,220);
+            background: @bgrndInfoLite;
             border: 1px solid @bgrndColorFootball;
             border-radius: 5px;
           }
         }
-        .win_box{
-          display: block;
-          padding: 1px 3px;
-          text-align: center;
-          span{
-            display: block;
+        .match_prop_value{
+          .input_box{
+            width: 52px;
+            text-align: center;
+            padding: 2px 5px;
+            border-radius: 5px;
+            background: @bgrndInfoLite;
+            border: 2px solid rgb(234, 182, 41);
           }
+          .match_result_input_box{
+            display: inline-block;
+            border-radius: 5px;
+            background: @bgrndInfoLite;
+            border: 2px solid rgb(234, 182, 41);
+            .win_box{
+              font-size: 9px;
+              font-weight: bold;
+              display: block;
+              padding: 1px 1px;
+              text-align: center;
+              span{
+                display: block;
+              }
+              .win_radio{
+                position: relative;
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: @bgrndColorFootball;
+                box-shadow: inset 0px 2px 8px 0px rgba(45,45,45, 0.75);
+                margin: 0;
+                cursor: pointer;
+              }
+            }
+            .futbol_radio{
+              position: absolute;
+              top:50%;
+              left:50%;
+              transform: translate(-50%, -50%);
+              font-size: 9px;
+              border-radius: 50%;
+              background: rgb(255,255,255);
+            }
+          }
+        }
+        .btn_random{
+          position: absolute;
+          right: -25px;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 1px 3px;
+          border-radius: 5px;
+          background: @bgrndInfoLite;
+          border: 1px solid #238b94;
+          box-shadow: 0px 2px 8px 0px @bgrndInfoLite;
+          cursor: pointer;
+        }
+        .lamp{
+          position: absolute;
+          padding: 0;
+          margin: 0;
+          left: -15px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 10px;
+          height: 10px;
+          background: rgb(255, 78, 51);
+          border-radius: 50%;
+          box-shadow: 0px 0px 7px rgb(255, 78, 51);
+        }
+        .lamp-confirm{
+          background: @bgrndColorFootball;
+          box-shadow: 0px 0px 7px  @bgrndColorFootball;
         }
       }
     }

@@ -46,15 +46,19 @@
                 <div class="main_match_info_box">
                     <div class="main_match_info_title">Основное</div>
                     <div class="match_result_wrap match_prop_wrap">
-                        <div class="match_prop_title left">
+                        <div class="match_prop_title left match_result">
                             <span>Результат матча</span>
                             <b><i class="fa fa-newspaper-o" aria-hidden="true"></i></b>
                         </div>
                         <div class="match_prop_value right">
-                            <div class="win1_box win_box left"><span>П1</span><input name="dzen" type="radio" value="nedzen"></div>
-                            <div class="draw_box win_box left"><span>Н</span><input name="dzen" type="radio" value="nedzen"></div>
-                            <div class="win2_box win_box left"><span>П2</span><input name="dzen" type="radio" value="nedzen"></div>
+                            <div class="match_result_input_box">
+                                <div class="win1_box win_box left"><span>П1</span><div class="win_radio"></div></div>
+                                <div class="draw_box win_box left"><span>Н</span><div class="win_radio"></div></div>
+                                <div class="win2_box win_box left"><span>П2</span><div class="win_radio"></div></div>
+                            </div>
                         </div>
+                        <b class="btn_random"><i class="fa fa-random" aria-hidden="true"></i></b>
+                        <p class="lamp visit_lamp"></p>
                     </div>
                     <div class="goals_sum_wrap match_prop_wrap">
                         <div class="goals_sum_title match_prop_title">
@@ -62,7 +66,11 @@
                             <b><i class="sum-icon">∑ <i class="fa fa-futbol-o" aria-hidden="true"></i></i></b>
                         </div>
                         <div class="match_prop_value right">
+                            <input type="number" class="goals_sum input_box" min="0" max="30" placeholder="..."
+                                   data="goals_sum">
                         </div>
+                        <b class="btn_random"><i class="fa fa-random" aria-hidden="true"></i></b>
+                        <p class="lamp visit_lamp"></p>
                     </div>
                     <div class="goals_margin_wrap match_prop_wrap">
                         <div class="goals_margin_title match_prop_title">
@@ -70,6 +78,8 @@
                             <b><i class="margin-icon">+/- <i class="fa fa-futbol-o" aria-hidden="true"></i></i></b>
                         </div>
                         <div class="match_prop_value right">
+                            <input type="number" class="goals_margin input_box" min="0" max="30" placeholder="..."
+                                   data="goals_margin">
                         </div>
                     </div>
                 </div>

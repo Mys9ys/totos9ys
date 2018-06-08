@@ -7,6 +7,13 @@ $(document).ready(function () {
             $('.subscribe-button').prop('disabled', false);
         }
     });
+    $('.match_result_input_box').on('click', '.win_radio', function () {
+        $('.win_radio').find('.futbol_radio').remove();
+        console.log('tyt');
+        $(this).append('<i class="fa fa-futbol-o futbol_radio" aria-hidden="true"></i>').data('win', '1');
+    });
+
+    // $('.match_result_input_box').child('.win_radio').eq(1).append('<i class="fa fa-futbol-o" aria-hidden="true"></i>');
 
 
     // Массив прогноза

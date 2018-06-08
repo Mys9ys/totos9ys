@@ -115,7 +115,7 @@
 .forecast_football .forecast_wrap .match_block .teams_block .team_block .teams_goal {
   width: 43px;
   height: 43px;
-  background: gray;
+  background: #abd7da;
   border-radius: 0 5px 5px 0;
   font-size: 36px;
   text-align: center;
@@ -126,9 +126,10 @@
   position: relative;
   margin-top: 15px;
   padding: 12px;
-  padding-right: 24px;
+  padding-right: 32px;
+  padding-left: 20px;
   display: block;
-  width: 300px;
+  width: 310px;
   box-shadow: 0px 2px 8px 0px #9cc218;
   border-radius: 10px;
 }
@@ -145,27 +146,94 @@
 .forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_wrap {
   display: inline-block;
   width: 100%;
-  border-bottom: 1px solid #9cc218;
+  border-bottom: 2px solid #9cc218;
+  position: relative;
 }
 .forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_title {
   display: inline-block;
-  width: 75%;
+  width: 70%;
+  padding: 3px 2px;
 }
 .forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_title b {
   float: right;
   display: inline-block;
   padding: 2px;
-  background: #dcdcdc;
+  background: #abd7da;
   border: 1px solid #9cc218;
   border-radius: 5px;
 }
-.forecast_football .forecast_wrap .match_block .main_match_info_box .win_box {
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .input_box {
+  width: 52px;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #abd7da;
+  border: 2px solid #eab629;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .match_result_input_box {
+  display: inline-block;
+  border-radius: 5px;
+  background: #abd7da;
+  border: 2px solid #eab629;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .match_result_input_box .win_box {
+  font-size: 9px;
+  font-weight: bold;
   display: block;
-  padding: 1px 3px;
+  padding: 1px 1px;
   text-align: center;
 }
-.forecast_football .forecast_wrap .match_block .main_match_info_box .win_box span {
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .match_result_input_box .win_box span {
   display: block;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .match_result_input_box .win_box .win_radio {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9cc218;
+  box-shadow: inset 0px 2px 8px 0px rgba(45, 45, 45, 0.75);
+  margin: 0;
+  cursor: pointer;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .match_prop_value .match_result_input_box .futbol_radio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .btn_random {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1px 3px;
+  border-radius: 5px;
+  background: #abd7da;
+  border: 1px solid #238b94;
+  box-shadow: 0px 2px 8px 0px #abd7da;
+  cursor: pointer;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .lamp {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #ff4e33;
+  border-radius: 50%;
+  box-shadow: 0px 0px 7px #ff4e33;
+}
+.forecast_football .forecast_wrap .match_block .main_match_info_box .lamp-confirm {
+  background: #9cc218;
+  box-shadow: 0px 0px 7px #9cc218;
 }
 .forecast-football {
   background: #9cc218;
